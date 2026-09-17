@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SINERGI 2026 &bull; RSU Fastabiq Sehat PKU Muhammadiyah</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- QR Code Generator Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#002B66',
+              blue: '#0047BA',
+              accent: '#0D6EFD',
+              light: '#EEF4FF',
+              yellow: '#FFC800',
+              gold: '#F59E0B',
+              dark: '#081735'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .tap-effect {
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .tap-effect:active {
+      transform: scale(0.96);
+      filter: brightness(0.95);
+    }
+    /* Smooth slide animation transition */
+    .slide-item {
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-yellow selection:text-brand-navy pb-24 md:pb-8">
+
+  <!-- ================= APP BAR HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-sm">
+    <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
+      
+      <!-- Logo Brand PNG Transparan (Full, Tanpa Border/Outline) -->
+      <div class="flex items-center gap-3">
+        <div class="h-10 sm:h-11 flex items-center justify-center flex-shrink-0">
+          <img 
+            id="mainLogoImg"
+            src="logo.png" 
+            alt="Logo RSU Fastabiq Sehat" 
+            class="h-full w-auto object-contain"
+            onerror="this.src='https://placehold.co/140x50/transparent/002B66.png?text=RSFS'"
+          />
+        </div>
+        <!-- <div>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <h1 class="text-xs sm:text-sm font-black tracking-tight text-slate-900 leading-none uppercase">
+              RSU Fastabiq Sehat
+            </h1>
+            <span class="text-[9px] bg-amber-100 text-amber-900 font-bold px-1.5 py-0.5 rounded border border-amber-300 leading-none">
+              ★ Paripurna
+            </span>
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-none mt-1">
+            PKU Muhammadiyah &bull; Dinkes Pati
+          </p>
+        </div> -->
+      </div>
+
+      <!-- Action Button Header: QR Code Publik (Tanpa Ikon Pengaturan) -->
+      <div class="flex items-center gap-1.5 flex-shrink-0">
+        <button 
+          onclick="bukaModalQR()" 
+          class="tap-effect w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition border border-slate-200" 
+          title="Tampilkan QR Barcode Acara"
+        >
+          <i data-lucide="qr-code" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Segmented Tab Navigation: Responsive Scrollable Pills -->
+    <div class="max-w-xl mx-auto px-3 pb-2.5">
+      <div class="bg-slate-100/90 p-1 rounded-xl flex items-center gap-1 overflow-x-auto no-scrollbar border border-slate-200/80">
+        <button onclick="gantiTab('beranda')" id="btnTab-beranda" class="flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all bg-white text-brand-navy shadow-sm flex items-center justify-center gap-1 font-bold text-[11px] sm:text-xs whitespace-nowrap">
+          <i data-lucide="home" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Beranda</span>
+        </button>
+        <button onclick="gantiTab('akses')" id="btnTab-akses" class="flex-1 min-w-[86px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap">
+          <i data-lucide="file-check-2" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Akses &amp; Form</span>
+        </button>
+        <button onclick="gantiTab('rundown')" id="btnTab-rundown" class="flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap">
+          <i data-lucide="calendar-clock" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Rundown</span>
+        </button>
+        <button onclick="gantiTab('lokasi')" id="btnTab-lokasi" class="flex-1 min-w-[70px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Lokasi</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA APLIKASI ================= -->
+  <main class="max-w-xl mx-auto px-4 py-4 w-full flex-grow">
+
+    <!-- TAB 1: BERANDA -->
+    <section id="tab-beranda" class="space-y-4">
+
+      <!-- ================= HERO SLIDESHOW ADAPTIF ================= -->
+      <div class="relative w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl border border-slate-200 group select-none">
+        
+        <!-- Slide Container dengan min-height nyaman untuk teks di mobile -->
+        <div id="slideshowContainer" class="relative w-full min-h-[220px] aspect-[4/3] sm:aspect-[16/9]">
+          
+          <!-- SLIDE 1: Gedung RS & Banner Resmi -->
+          <div class="slide-item absolute inset-0 w-full h-full opacity-100 z-10">
+            <img 
+              src="https://placehold.co/1200x675/002B66/FFFFFF.png?text=RSU+Fastabiq+Sehat+PKU+Muhammadiyah+-+SINERGI+2026" 
+              alt="Gedung RSU Fastabiq Sehat PKU Muhammadiyah" 
+              class="w-full h-full object-cover"
+              onerror="this.src='https://placehold.co/1200x675/002B66/FFFFFF.png?text=SINERGI+2026+RSFS'"
+            />
+            <!-- Gradient Overlay Modern dengan Safe Padding agar tidak menabrak panah kiri & kanan -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#001D47]/95 via-[#002B66]/70 to-transparent flex flex-col justify-end px-11 pb-7 sm:px-14 sm:pb-8 pt-4 text-white">
+              <span class="inline-flex items-center gap-1 bg-brand-yellow text-brand-navy font-black text-[9px] sm:text-[10px] tracking-wider px-2 py-0.5 rounded uppercase w-fit mb-1.5">
+                <i data-lucide="sparkles" class="w-3 h-3"></i>
+                Official Banner &bull; SINERGI 2026
+              </span>
+              <h2 class="text-sm sm:text-lg font-black leading-snug drop-shadow-md">
+                Strategic Integration and Networking for Greater Impact
+              </h2>
+              <p class="text-[10px] sm:text-xs text-blue-100 line-clamp-2 mt-1 leading-relaxed">
+                Penguatan jejaring &amp; kemitraan rujukan faskes se-Kabupaten Pati.
+              </p>
+            </div>
+          </div>
+
+          <!-- SLIDE 2: Synergy Space Venue -->
+          <div class="slide-item absolute inset-0 w-full h-full opacity-0 pointer-events-none">
+            <img 
+              src="https://placehold.co/1200x675/0047BA/FFFFFF.png?text=Synergy+Space+Auditorium+-+Hall+Acara" 
+              alt="Ruang Synergy Space RSU Fastabiq Sehat" 
+              class="w-full h-full object-cover"
+              onerror="this.src='https://placehold.co/1200x675/0047BA/FFFFFF.png?text=Synergy+Space+Venue'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-900/65 to-transparent flex flex-col justify-end px-11 pb-7 sm:px-14 sm:pb-8 pt-4 text-white">
+              <span class="inline-flex items-center gap-1 bg-blue-500 text-white font-black text-[9px] sm:text-[10px] tracking-wider px-2 py-0.5 rounded uppercase w-fit mb-1.5">
+                <i data-lucide="map-pin" class="w-3 h-3"></i>
+                Venue Resmi
+              </span>
+              <h2 class="text-sm sm:text-lg font-black leading-snug">
+                Synergy Space &bull; Ruang Pertemuan Terpadu
+              </h2>
+              <p class="text-[10px] sm:text-xs text-slate-200 mt-1 leading-relaxed">
+                Lantai Utama RSU Fastabiq Sehat PKU Muhammadiyah Pati.
+              </p>
+            </div>
+          </div>
+
+          <!-- SLIDE 3: Komitmen Kemitraan Dinkes & PKU -->
+          <div class="slide-item absolute inset-0 w-full h-full opacity-0 pointer-events-none">
+            <img 
+              src="https://placehold.co/1200x675/0A2540/FFFFFF.png?text=Kolaborasi+Dinkes+Pati+%26+RSU+Fastabiq+Sehat" 
+              alt="Kolaborasi Dinas Kesehatan Pati & RSU Fastabiq Sehat" 
+              class="w-full h-full object-cover"
+              onerror="this.src='https://placehold.co/1200x675/0A2540/FFFFFF.png?text=Kolaborasi+Faskes+Pati'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-blue-900/65 to-transparent flex flex-col justify-end px-11 pb-7 sm:px-14 sm:pb-8 pt-4 text-white">
+              <span class="inline-flex items-center gap-1 bg-emerald-500 text-white font-black text-[9px] sm:text-[10px] tracking-wider px-2 py-0.5 rounded uppercase w-fit mb-1.5">
+                <i data-lucide="users-round" class="w-3 h-3"></i>
+                Kemitraan Faskes
+              </span>
+              <h2 class="text-sm sm:text-lg font-black leading-snug">
+                Integrasi Layanan &amp; Rujukan Paripurna
+              </h2>
+              <p class="text-[10px] sm:text-xs text-slate-200 mt-1 leading-relaxed">
+                Menghasilkan dampak lebih luas bagi derajat kesehatan masyarakat.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tombol Prev / Next Navigasi Carousel -->
+        <button 
+          onclick="geserSlide(-1)" 
+          class="tap-effect absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md flex items-center justify-center transition border border-white/20 shadow-md"
+          aria-label="Slide Sebelumnya"
+        >
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        </button>
+
+        <button 
+          onclick="geserSlide(1)" 
+          class="tap-effect absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md flex items-center justify-center transition border border-white/20 shadow-md"
+          aria-label="Slide Selanjutnya"
+        >
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Indikator Bulat (Dots) Slideshow -->
+        <div id="slideDots" class="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/10">
+          <button onclick="lompatSlide(0)" class="w-2 h-2 rounded-full transition-all bg-brand-yellow scale-125" aria-label="Lompat ke Slide 1"></button>
+          <button onclick="lompatSlide(1)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 2"></button>
+          <button onclick="lompatSlide(2)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 3"></button>
+        </div>
+
+      </div>
+
+      <!-- Partner Logo Strip Resmi: Murni Logo PNG Transparan (Full, Tanpa Border/Outline/Teks) -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/80 shadow-xs px-4 py-3.5">
+        <div class="flex items-center justify-around gap-4 sm:gap-8">
+          
+          <!-- Logo 1: RSU Fastabiq Sehat PKU Muhammadiyah -->
+          <div class="flex items-center justify-center h-12 flex-1 max-w-[150px]">
+            <img 
+              id="stripLogoRsfs"
+              src="logo-rsfs.png" 
+              alt="Logo RSU Fastabiq Sehat" 
+              class="max-h-full max-w-full w-auto object-contain"
+              onerror="this.src='https://placehold.co/240x80/transparent/002B66.png?text=RSU+Fastabiq'"
+            />
+          </div>
+
+          <!-- Divider Halus -->
+          <div class="h-8 w-px bg-slate-200/80"></div>
+
+          <!-- Logo 2: Akreditasi Paripurna KARS Bintang Lima -->
+          <div class="flex items-center justify-center h-12 flex-1 max-w-[150px]">
+            <img 
+              id="stripLogoParipurna"
+              src="logo-paripurna.png" 
+              alt="Logo Akreditasi Paripurna" 
+              class="max-h-full max-w-full w-auto object-contain"
+              onerror="this.src='https://placehold.co/240x80/transparent/D97706.png?text=PARIPURNA'"
+            />
+          </div>
+
+          <!-- Divider Halus -->
+          <div class="h-8 w-px bg-slate-200/80"></div>
+
+          <!-- Logo 3: Dinas Kesehatan Kabupaten Pati -->
+          <div class="flex items-center justify-center h-12 flex-1 max-w-[150px]">
+            <img 
+              id="stripLogoDinkes"
+              src="logo-dinkes.png" 
+              alt="Logo Dinkes Pati" 
+              class="max-h-full max-w-full w-auto object-contain"
+              onerror="this.src='https://placehold.co/240x80/transparent/0F172A.png?text=Dinkes+Pati'"
+            />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quote Tema & Detail Waktu Acara -->
+      <div class="bg-gradient-to-br from-[#002766] via-[#0042AC] to-[#0D63E6] rounded-3xl text-white p-4 sm:p-5 shadow-lg border border-blue-400/20 relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-brand-yellow/15 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="relative z-10">
+          <div class="p-3 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">
+            <p class="text-xs text-blue-50 italic leading-relaxed text-center">
+              &ldquo;Integrasi strategis dalam penguatan jejaring dan kemitraan untuk menghasilkan dampak yang lebih besar dalam pelayanan kesehatan&rdquo;
+            </p>
+          </div>
+
+          <!-- Waktu, Tanggal & Jam -->
+          <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+            <div class="flex items-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+              <div class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center text-brand-yellow shrink-0">
+                <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[9px] text-blue-200 uppercase font-bold tracking-wider">Tanggal</p>
+                <p class="font-bold text-white leading-tight text-[11px] sm:text-xs truncate">Rabu, 30 Sept 2026</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
+              <div class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center text-brand-yellow shrink-0">
+                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[9px] text-blue-200 uppercase font-bold tracking-wider">Waktu</p>
+                <p class="font-bold text-white leading-tight text-[11px] sm:text-xs truncate">07.30 - 11.00 WIB</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Venue & Shortlink Salin: Flex-wrap agar tidak bertabrakan di layar sempit -->
+          <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2 bg-black/25 px-3 py-2 rounded-xl text-xs border border-white/10">
+            <div class="flex items-center gap-1.5 shrink-0">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-yellow shrink-0"></i>
+              <span class="text-blue-100 font-medium text-[11px]">Ruang:</span>
+              <span class="bg-brand-yellow text-slate-900 font-extrabold px-2 py-0.5 rounded text-[10px] sm:text-[11px] whitespace-nowrap shadow-sm">
+                Synergy Space
+              </span>
+            </div>
+            <button 
+              onclick="salinShortlink()" 
+              class="tap-effect text-[11px] text-brand-yellow hover:text-white font-bold flex items-center gap-1 underline ml-auto"
+              title="Salin tautan ke clipboard"
+            >
+              <span class="truncate">Bit.ly/Sinergi2026RSFS</span>
+              <i data-lucide="copy" class="w-3 h-3 shrink-0"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Event Countdown Timer -->
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Hitung Mundur Pelaksanaan</h3>
+          </div>
+          <button onclick="tambahkanKeKalender()" class="tap-effect text-[11px] text-brand-blue font-bold hover:underline flex items-center gap-1">
+            <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i>
+            <span>Simpan Kalender</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 text-center">
+          <div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-xl">
+            <span id="countdown-hari" class="text-lg font-black text-slate-900 block">--</span>
+            <span class="text-[10px] text-slate-500 uppercase font-semibold">Hari</span>
+          </div>
+          <div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-xl">
+            <span id="countdown-jam" class="text-lg font-black text-slate-900 block">--</span>
+            <span class="text-[10px] text-slate-500 uppercase font-semibold">Jam</span>
+          </div>
+          <div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-xl">
+            <span id="countdown-menit" class="text-lg font-black text-slate-900 block">--</span>
+            <span class="text-[10px] text-slate-500 uppercase font-semibold">Menit</span>
+          </div>
+          <div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-xl">
+            <span id="countdown-detik" class="text-lg font-black text-brand-blue block">--</span>
+            <span class="text-[10px] text-slate-500 uppercase font-semibold">Detik</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Grid ala Mobile App -->
+      <div class="grid grid-cols-3 gap-2.5">
+        <button onclick="bukaModalForm()" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-brand-blue transition group">
+          <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+            <i data-lucide="clipboard-pen-line" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-800">Presensi</span>
+          <span class="text-[10px] text-slate-500 mt-0.5">Google Form</span>
+        </button>
+
+        <a id="btnQuickMateri" href="#" target="_blank" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-emerald-500 transition group">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-800">Materi</span>
+          <span class="text-[10px] text-slate-500 mt-0.5">Slide &amp; PDF</span>
+        </a>
+
+        <a id="btnQuickDokumentasi" href="#" target="_blank" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-amber-500 transition group">
+          <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
+            <i data-lucide="camera" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs font-bold text-slate-800">Dokumentasi</span>
+          <span class="text-[10px] text-slate-500 mt-0.5">Galeri Foto</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- TAB 2: AKSES FORM & MATERI LENGKAP -->
+    <section id="tab-akses" class="hidden space-y-3.5">
+      
+      <div class="bg-blue-50/80 border border-blue-100 rounded-2xl p-3.5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center flex-shrink-0">
+          <i data-lucide="info" class="w-4 h-4"></i>
+        </div>
+        <p class="text-xs text-brand-navy leading-relaxed font-medium">
+          Silakan isi formulir kehadiran terlebih dahulu, kemudian akses materi paparan narasumber di bawah ini.
+        </p>
+      </div>
+
+      <!-- CARD 1: FORM REGISTRASI -->
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition p-4 relative overflow-hidden">
+        <div class="flex items-start gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-brand-navy text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+            <i data-lucide="clipboard-edit" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900">Registrasi &amp; Presensi</h3>
+              <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Wajib</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1 mb-3 leading-relaxed">
+              Konfirmasi kehadiran Anda dalam forum SINERGI 2026 melalui Google Form resmi.
+            </p>
+            <div class="flex gap-2">
+              <button 
+                onclick="bukaModalForm()" 
+                class="tap-effect flex-1 bg-brand-blue hover:bg-blue-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
+              >
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                <span>Buka Form di Web</span>
+              </button>
+              <a 
+                id="linkFormBaru" 
+                href="#" 
+                target="_blank" 
+                class="tap-effect bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 px-3 rounded-xl transition flex items-center justify-center gap-1"
+              >
+                <span>Tab Baru</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: MATERI PAPARAN -->
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition p-4">
+        <div class="flex items-start gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+            <i data-lucide="folder-down" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900">Materi &amp; Paparan Sinergi</h3>
+              <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Google Drive</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1 mb-3 leading-relaxed">
+              Unduh salinan slide presentasi integrasi strategis dan modul paparan pembicara.
+            </p>
+            <a 
+              id="linkMateri" 
+              href="#" 
+              target="_blank" 
+              class="tap-effect w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Akses Folder Materi</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: DOKUMENTASI & FOTO -->
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition p-4">
+        <div class="flex items-start gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+            <i data-lucide="images" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900">Dokumentasi &amp; Galeri Foto</h3>
+              <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Foto HD</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1 mb-3 leading-relaxed">
+              Foto dokumentasi selama kegiatan, networking session, dan sesi serah terima plakat.
+            </p>
+            <a 
+              id="linkDokumentasi" 
+              href="#" 
+              target="_blank" 
+              class="tap-effect w-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="image" class="w-3.5 h-3.5"></i>
+              <span>Buka Galeri Foto</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TAB 3: RUNDOWN ACARA -->
+    <section id="tab-rundown" class="hidden space-y-3">
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4">
+        <div class="flex items-center justify-between mb-1">
+          <h3 class="text-sm font-bold text-slate-900">Susunan Acara (Rundown)</h3>
+          <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-semibold">WIB</span>
+        </div>
+        <p class="text-xs text-slate-500 mb-4">Rabu, 30 September 2026 &bull; Synergy Space</p>
+
+        <!-- Timeline items -->
+        <div class="relative border-l-2 border-brand-blue/30 ml-3 space-y-5 text-xs">
+          
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-blue border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="coffee" class="w-3 h-3"></i>
+              07.30 - 08.00
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Registrasi Peserta &amp; Coffee Morning</h4>
+            <p class="text-slate-500 mt-0.5">Scan QR presensi digital, welcome snack &amp; sesi jejaring awal faskes.</p>
+          </div>
+
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-navy border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="mic-2" class="w-3 h-3"></i>
+              08.00 - 08.30
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Pembukaan &amp; Sambutan Pengantar</h4>
+            <p class="text-slate-500 mt-0.5">Direktur RSU Fastabiq Sehat PKU Muhammadiyah &amp; Kepala Dinkes Pati.</p>
+          </div>
+
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-yellow border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="presentation" class="w-3 h-3"></i>
+              08.30 - 10.15
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Sesi Utama: Strategic Integration &amp; Networking</h4>
+            <p class="text-slate-500 mt-0.5">Integrasi sistem rujukan terpadu, kemitraan fasilitas kesehatan, dan diskusi panel.</p>
+          </div>
+
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="handshake" class="w-3 h-3"></i>
+              10.15 - 11.00
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Penandatanganan Komitmen &amp; Penutup</h4>
+            <p class="text-slate-500 mt-0.5">Foto bersama faskes mitra, ramah tamah, serta penutupan acara resmi.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: LOKASI & KONTAK -->
+    <section id="tab-lokasi" class="hidden space-y-3.5">
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4">
+        <h3 class="text-sm font-bold text-slate-900 mb-1">Lokasi Gedung &amp; Fasilitas</h3>
+        <p class="text-xs text-slate-500 mb-3">RSU Fastabiq Sehat PKU Muhammadiyah &bull; Kabupaten Pati</p>
+        
+        <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 text-xs space-y-2 mb-3">
+          <p class="flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5"></i>
+            <span class="text-slate-600"><strong>Alamat:</strong> Jl. Raya Pati - Tayu KM 3, Tambaharjo, Kec. Pati, Kabupaten Pati, Jawa Tengah</span>
+          </p>
+          <p class="flex items-start gap-2">
+            <i data-lucide="building" class="w-4 h-4 text-brand-navy flex-shrink-0 mt-0.5"></i>
+            <span class="text-slate-600"><strong>Ruang:</strong> <span class="font-bold text-brand-blue">Synergy Space (Lantai Utama)</span></span>
+          </p>
+        </div>
+
+        <a 
+          href="https://maps.google.com/?q=RSU+Fastabiq+Sehat+PKU+Muhammadiyah+Pati" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="tap-effect w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
+        >
+          <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+          <span>Buka Navigasi Google Maps</span>
+        </a>
+      </div>
+
+      <!-- Kontak Panitia -->
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4">
+        <h3 class="text-sm font-bold text-slate-900 mb-1">Bantuan &amp; Layanan Panitia</h3>
+        <p class="text-xs text-slate-500 mb-3">Memerlukan bantuan teknis terkait pendaftaran atau berkas materi?</p>
+        
+        <div class="flex gap-2">
+          <a 
+            href="https://wa.me/6281234567890?text=Halo%20Panitia%20SINERGI%202026%20RSU%20Fastabiq%20Sehat" 
+            target="_blank" 
+            class="tap-effect flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center flex items-center justify-center gap-1.5"
+          >
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>WhatsApp Panitia</span>
+          </a>
+          <button 
+            onclick="salinShortlink()" 
+            class="tap-effect bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 px-3 rounded-xl transition flex items-center gap-1"
+          >
+            <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+            <span>Copy Link</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FLOATING BOTTOM NAVIGATION (MOBILE NATIVE APP FEEL) ================= -->
+  <nav class="fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-lg border-t border-slate-200 shadow-lg md:hidden">
+    <div class="max-w-xl mx-auto px-4 py-2 flex items-center justify-around text-center">
+      <button onclick="gantiTab('beranda')" id="btnBottom-beranda" class="tap-effect flex flex-col items-center gap-1 text-brand-blue font-bold">
+        <i data-lucide="home" class="w-5 h-5"></i>
+        <span class="text-[10px]">Beranda</span>
+      </button>
+
+      <button onclick="gantiTab('akses')" id="btnBottom-akses" class="tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium">
+        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+        <span class="text-[10px]">Presensi</span>
+      </button>
+
+      <!-- Center Floating Action Button (FAB) for QR Code -->
+      <button onclick="bukaModalQR()" class="tap-effect -mt-5 bg-gradient-to-tr from-brand-blue to-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30 border-2 border-white" aria-label="QR Code Scanner">
+        <i data-lucide="qr-code" class="w-6 h-6"></i>
+      </button>
+
+      <button onclick="gantiTab('rundown')" id="btnBottom-rundown" class="tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium">
+        <i data-lucide="clock-3" class="w-5 h-5"></i>
+        <span class="text-[10px]">Jadwal</span>
+      </button>
+
+      <button onclick="gantiTab('lokasi')" id="btnBottom-lokasi" class="tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium">
+        <i data-lucide="map-pin" class="w-5 h-5"></i>
+        <span class="text-[10px]">Lokasi</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= FOOTER DESKTOP ================= -->
+  <footer class="py-4 text-center text-xs text-slate-400 border-t border-slate-200/80 bg-white hidden md:block">
+    <div class="max-w-xl mx-auto px-4">
+      <p class="font-semibold text-slate-600">RSU Fastabiq Sehat PKU Muhammadiyah &bull; Dinas Kesehatan Kabupaten Pati</p>
+      <p class="text-[11px] text-slate-400 mt-0.5">&copy; 2026 SINERGI 2026 &bull; Dedicated Event Web App Portal</p>
+    </div>
+  </footer>
+
+  <!-- ================= TOAST NOTIFIKASI ================= -->
+  <div id="toastMessage" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-2xl backdrop-blur-md hidden transition-all duration-300 flex items-center gap-2 border border-slate-700">
+    <span id="toastIcon">
+      <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 inline"></i>
+    </span>
+    <span id="toastText">Tautan berhasil disalin!</span>
+  </div>
+
+  <!-- ================= MODAL 1: GOOGLE FORM (EMBEDDED VIEW) ================= -->
+  <div id="modalForm" class="fixed inset-0 bg-slate-950/70 z-50 flex items-center justify-center p-2 sm:p-4 hidden backdrop-blur-sm">
+    <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl flex flex-col h-[92vh] overflow-hidden border border-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div class="flex items-center gap-2.5">
+          <span class="w-3 h-3 rounded-full bg-brand-blue animate-ping"></span>
+          <div>
+            <h4 class="text-xs font-black text-slate-900 leading-tight">Formulir Registrasi &amp; Presensi</h4>
+            <p class="text-[10px] text-slate-500">SINERGI 2026 &bull; RSU Fastabiq Sehat</p>
+          </div>
+        </div>
+        <button onclick="tutupModalForm()" class="tap-effect text-slate-400 hover:text-slate-800 text-2xl font-bold w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Iframe Container -->
+      <div class="flex-1 relative bg-slate-100">
+        <div id="loadingForm" class="absolute inset-0 flex flex-col items-center justify-center text-xs text-slate-500 bg-white">
+          <div class="w-8 h-8 border-3 border-brand-blue border-t-transparent rounded-full animate-spin mb-2"></div>
+          Memuat formulir Google Form...
+        </div>
+        <iframe 
+          id="iframeForm" 
+          src="" 
+          class="w-full h-full border-0 relative z-10"
+          onload="document.getElementById('loadingForm').style.display='none'"
+        ></iframe>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-4 py-2.5 border-t border-slate-200 bg-white flex justify-between items-center text-xs">
+        <span class="text-slate-500 text-[11px]">Terkendala pengisian?</span>
+        <a id="linkAlternatifForm" href="#" target="_blank" class="tap-effect text-brand-blue font-bold hover:underline flex items-center gap-1">
+          <span>Buka di Tab Layar Penuh</span>
+          <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL 2: QR CODE SHARE ================= -->
+  <div id="modalQR" class="fixed inset-0 bg-slate-950/70 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-5 text-center border border-slate-200">
+      
+      <div class="flex justify-between items-center mb-3">
+        <h3 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+          <i data-lucide="qr-code" class="w-4 h-4 text-brand-blue"></i>
+          <span>QR Akses Cepat</span>
+        </h3>
+        <button onclick="tutupModalQR()" class="tap-effect text-slate-400 hover:text-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-500 mb-4">
+        Arahkan kamera smartphone untuk langsung membuka portal web SINERGI 2026.
+      </p>
+
+      <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 inline-block shadow-inner mb-4">
+        <div id="qrcodeCanvas" class="flex justify-center"></div>
+      </div>
+
+      <div class="bg-blue-50 text-brand-navy p-2.5 rounded-xl text-xs font-mono font-bold mb-4">
+        Bit.ly/Sinergi2026RSFS
+      </div>
+
+      <div class="flex gap-2">
+        <button onclick="salinShortlink()" class="tap-effect flex-1 bg-brand-blue hover:bg-blue-800 text-white text-xs font-semibold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>Salin Tautan</span>
+        </button>
+        <button onclick="tutupModalQR()" class="tap-effect bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-4 py-2.5 rounded-xl transition">
+          Tutup
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC WEB APP ================= -->
+  <script>
+    /**
+     * ============================================================
+     * KONFIGURASI TAUTAN & FILE (UBAH MANUAL DI BAWAH INI)
+     * ============================================================
+     */
+    const CONFIG = {
+      // Nama file logo PNG transparan (berada di folder yang sama dengan index.html)
+      logoPng: "logo.png",
+      logoStripRsfs: "logo-rsfs.png",
+      logoStripParipurna: "logo-paripurna.png",
+      logoStripDinkes: "logo-dinkes.png",
+
+      // Tautan Google Form Resmi
+      // Catatan: Untuk formEmbed, tambahkan '?embedded=true' di akhir link Google Form
+      formEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScC1L69W5P_m91qD_B-example/viewform?embedded=true",
+      formDirect: "https://bit.ly/Sinergi2026RSFS",
+
+      // Tautan Folder Materi & Modul (Google Drive)
+      materi: "https://drive.google.com/",
+
+      // Tautan Galeri Foto & Dokumentasi (Google Photos / Google Drive)
+      dokumentasi: "https://photos.google.com/",
+
+      // Tampilan teks shortlink & target tanggal acara
+      shortlinkDisplay: "Bit.ly/Sinergi2026RSFS",
+      eventTime: "2026-09-30T07:30:00+07:00"
+    };
+
+    // State Hero Slideshow
+    let slideAktif = 0;
+    const totalSlides = 3;
+    let timerSlideshow = null;
+
+    // Inisialisasi utama saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", () => {
+      pasangTautanKeHalaman();
+      inisialisasiCountdown();
+      buatQRCode();
+      inisialisasiSlideshow();
+      inisialisasiGestureSwipe();
+      
+      // Render semua icon Lucide
+      lucide.createIcons();
+    });
+
+    // 1. Terapkan Konfigurasi Tautan dan File Gambar ke Elemen DOM
+    function pasangTautanKeHalaman() {
+      // Pasang Logo PNG Header
+      const mainLogo = document.getElementById("mainLogoImg");
+      if (mainLogo && CONFIG.logoPng) {
+        mainLogo.src = CONFIG.logoPng;
+      }
+
+      // Pasang Logo PNG di Partner Strip
+      const stripRsfs = document.getElementById("stripLogoRsfs");
+      if (stripRsfs && CONFIG.logoStripRsfs) {
+        stripRsfs.src = CONFIG.logoStripRsfs;
+      }
+
+      const stripParipurna = document.getElementById("stripLogoParipurna");
+      if (stripParipurna && CONFIG.logoStripParipurna) {
+        stripParipurna.src = CONFIG.logoStripParipurna;
+      }
+
+      const stripDinkes = document.getElementById("stripLogoDinkes");
+      if (stripDinkes && CONFIG.logoStripDinkes) {
+        stripDinkes.src = CONFIG.logoStripDinkes;
+      }
+
+      // Pasang Link Form, Materi, dan Dokumentasi
+      const linkFormBaru = document.getElementById("linkFormBaru");
+      if (linkFormBaru) linkFormBaru.href = CONFIG.formDirect;
+
+      const linkAlternatifForm = document.getElementById("linkAlternatifForm");
+      if (linkAlternatifForm) linkAlternatifForm.href = CONFIG.formDirect;
+
+      const linkMateri = document.getElementById("linkMateri");
+      if (linkMateri) linkMateri.href = CONFIG.materi;
+
+      const btnQuickMateri = document.getElementById("btnQuickMateri");
+      if (btnQuickMateri) btnQuickMateri.href = CONFIG.materi;
+
+      const linkDokumentasi = document.getElementById("linkDokumentasi");
+      if (linkDokumentasi) linkDokumentasi.href = CONFIG.dokumentasi;
+
+      const btnQuickDokumentasi = document.getElementById("btnQuickDokumentasi");
+      if (btnQuickDokumentasi) btnQuickDokumentasi.href = CONFIG.dokumentasi;
+    }
+
+    // 2. Logika Hero Slideshow Adaptif
+    function inisialisasiSlideshow() {
+      tampilkanSlide(slideAktif);
+      mulaiAutoSlide();
+
+      const container = document.getElementById("slideshowContainer");
+      if (container) {
+        container.addEventListener("mouseenter", hentikanAutoSlide);
+        container.addEventListener("mouseleave", mulaiAutoSlide);
+      }
+    }
+
+    function mulaiAutoSlide() {
+      hentikanAutoSlide();
+      timerSlideshow = setInterval(() => {
+        geserSlide(1);
+      }, 4000);
+    }
+
+    function hentikanAutoSlide() {
+      if (timerSlideshow) clearInterval(timerSlideshow);
+    }
+
+    function geserSlide(arah) {
+      slideAktif = (slideAktif + arah + totalSlides) % totalSlides;
+      tampilkanSlide(slideAktif);
+    }
+
+    function lompatSlide(index) {
+      slideAktif = index;
+      tampilkanSlide(slideAktif);
+      mulaiAutoSlide();
+    }
+
+    function tampilkanSlide(idx) {
+      const slides = document.querySelectorAll("#slideshowContainer .slide-item");
+      const dots = document.querySelectorAll("#slideDots button");
+
+      slides.forEach((slide, i) => {
+        if (i === idx) {
+          slide.classList.remove("opacity-0", "pointer-events-none");
+          slide.classList.add("opacity-100", "z-10");
+        } else {
+          slide.classList.remove("opacity-100", "z-10");
+          slide.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === idx) {
+          dot.className = "w-2.5 h-2.5 rounded-full transition-all bg-brand-yellow scale-125";
+        } else {
+          dot.className = "w-2 h-2 rounded-full transition-all bg-white/50";
+        }
+      });
+    }
+
+    // Gesture Swipe Smartphone
+    function inisialisasiGestureSwipe() {
+      const slider = document.getElementById("slideshowContainer");
+      if (!slider) return;
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      slider.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      slider.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const threshold = 40;
+        if (touchEndX < touchStartX - threshold) {
+          geserSlide(1);
+          mulaiAutoSlide();
+        } else if (touchEndX > touchStartX + threshold) {
+          geserSlide(-1);
+          mulaiAutoSlide();
+        }
+      }
+    }
+
+    // 3. Tab Navigation
+    function gantiTab(tabId) {
+      const tabs = ['beranda', 'akses', 'rundown', 'lokasi'];
+      
+      tabs.forEach(tab => {
+        const el = document.getElementById(`tab-${tab}`);
+        const btnTab = document.getElementById(`btnTab-${tab}`);
+        const btnBottom = document.getElementById(`btnBottom-${tab}`);
+
+        if (tab === tabId) {
+          el.classList.remove('hidden');
+          btnTab.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all bg-white text-brand-navy shadow-sm flex items-center justify-center gap-1 font-bold text-[11px] sm:text-xs whitespace-nowrap";
+          if (btnBottom) {
+            btnBottom.className = "tap-effect flex flex-col items-center gap-1 text-brand-blue font-bold";
+          }
+        } else {
+          el.classList.add('hidden');
+          btnTab.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap";
+          if (btnBottom) {
+            btnBottom.className = "tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium";
+          }
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    // 4. Modal Google Form Controller
+    function bukaModalForm() {
+      const modal = document.getElementById("modalForm");
+      const iframe = document.getElementById("iframeForm");
+      
+      if (!iframe.src || iframe.src !== CONFIG.formEmbed) {
+        iframe.src = CONFIG.formEmbed;
+      }
+      modal.classList.remove("hidden");
+    }
+
+    function tutupModalForm() {
+      document.getElementById("modalForm").classList.add("hidden");
+    }
+
+    // 5. Modal QR Code Controller
+    function bukaModalQR() {
+      document.getElementById("modalQR").classList.remove("hidden");
+    }
+
+    function tutupModalQR() {
+      document.getElementById("modalQR").classList.add("hidden");
+    }
+
+    function buatQRCode() {
+      const container = document.getElementById("qrcodeCanvas");
+      if (!container) return;
+      container.innerHTML = "";
+      new QRCode(container, {
+        text: CONFIG.formDirect,
+        width: 170,
+        height: 170,
+        colorDark: "#002B66",
+        colorLight: "#FFFFFF",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
+    // 6. Hitung Mundur Real-time (Countdown)
+    function inisialisasiCountdown() {
+      const targetDate = new Date(CONFIG.eventTime).getTime();
+
+      function perbarui() {
+        const sekarang = new Date().getTime();
+        const selisih = targetDate - sekarang;
+
+        if (selisih <= 0) {
+          document.getElementById("countdown-hari").innerText = "0";
+          document.getElementById("countdown-jam").innerText = "0";
+          document.getElementById("countdown-menit").innerText = "0";
+          document.getElementById("countdown-detik").innerText = "0";
+          return;
+        }
+
+        const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+        const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+        const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-hari").innerText = hari;
+        document.getElementById("countdown-jam").innerText = jam;
+        document.getElementById("countdown-menit").innerText = menit;
+        document.getElementById("countdown-detik").innerText = detik;
+      }
+
+      perbarui();
+      setInterval(perbarui, 1000);
+    }
+
+    // 7. Simpan Acara ke Google Calendar
+    function tambahkanKeKalender() {
+      const title = encodeURIComponent("SINERGI 2026 - RSU Fastabiq Sehat PKU Muhammadiyah");
+      const details = encodeURIComponent("Strategic Integration and Networking for Greater Impact. Info: Bit.ly/Sinergi2026RSFS");
+      const location = encodeURIComponent("Synergy Space, RSU Fastabiq Sehat PKU Muhammadiyah, Jl. Raya Pati - Tayu KM 3, Pati");
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260930T003000Z/20260930T040000Z&details=${details}&location=${location}`;
+      
+      window.open(gcalUrl, '_blank');
+    }
+
+    // 8. Salin Shortlink
+    function salinShortlink() {
+      const textToCopy = CONFIG.shortlinkDisplay;
+      const input = document.createElement("input");
+      input.value = textToCopy;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+
+      tampilkanToast(`Tautan ${textToCopy} berhasil disalin!`);
+    }
+
+    // 9. Sistem Toast Notifikasi
+    function tampilkanToast(pesan) {
+      const toast = document.getElementById("toastMessage");
+      const toastText = document.getElementById("toastText");
+
+      toastText.innerText = pesan;
+      toast.classList.remove("hidden");
+
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 2600);
+    }
+  </script>
+
+</body>
+</html>
