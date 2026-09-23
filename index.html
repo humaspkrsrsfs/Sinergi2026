@@ -83,19 +83,7 @@
             onerror="this.src='https://placehold.co/140x50/transparent/002B66.png?text=RSFS'"
           />
         </div>
-        <!-- <div>
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <h1 class="text-xs sm:text-sm font-black tracking-tight text-slate-900 leading-none uppercase">
-              RSU Fastabiq Sehat
-            </h1>
-            <span class="text-[9px] bg-amber-100 text-amber-900 font-bold px-1.5 py-0.5 rounded border border-amber-300 leading-none">
-              ★ Paripurna
-            </span>
-          </div>
-          <p class="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-none mt-1">
-            PKU Muhammadiyah &bull; Dinkes Pati
-          </p>
-        </div> -->
+
       </div>
 
       <!-- Action Button Header: QR Code Publik (Tanpa Ikon Pengaturan) -->
@@ -149,7 +137,7 @@
           <!-- SLIDE 1: Gedung RS & Banner Resmi -->
           <div class="slide-item absolute inset-0 w-full h-full opacity-100 z-10">
             <img 
-              src="https://placehold.co/1200x675/002B66/FFFFFF.png?text=RSU+Fastabiq+Sehat+PKU+Muhammadiyah+-+SINERGI+2026" 
+              src="banner.PNG" 
               alt="Gedung RSU Fastabiq Sehat PKU Muhammadiyah" 
               class="w-full h-full object-cover"
               onerror="this.src='https://placehold.co/1200x675/002B66/FFFFFF.png?text=SINERGI+2026+RSFS'"
@@ -183,35 +171,15 @@
                 Venue Resmi
               </span>
               <h2 class="text-sm sm:text-lg font-black leading-snug">
-                Synergy Space &bull; Ruang Pertemuan Terpadu
+                Synergy Space &bull; Ruang Pertemuan
               </h2>
               <p class="text-[10px] sm:text-xs text-slate-200 mt-1 leading-relaxed">
-                Lantai Utama RSU Fastabiq Sehat PKU Muhammadiyah Pati.
+                RSU Fastabiq Sehat PKU Muhammadiyah Pati.
               </p>
             </div>
           </div>
 
-          <!-- SLIDE 3: Komitmen Kemitraan Dinkes & PKU -->
-          <div class="slide-item absolute inset-0 w-full h-full opacity-0 pointer-events-none">
-            <img 
-              src="https://placehold.co/1200x675/0A2540/FFFFFF.png?text=Kolaborasi+Dinkes+Pati+%26+RSU+Fastabiq+Sehat" 
-              alt="Kolaborasi Dinas Kesehatan Pati & RSU Fastabiq Sehat" 
-              class="w-full h-full object-cover"
-              onerror="this.src='https://placehold.co/1200x675/0A2540/FFFFFF.png?text=Kolaborasi+Faskes+Pati'"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-blue-900/65 to-transparent flex flex-col justify-end px-11 pb-7 sm:px-14 sm:pb-8 pt-4 text-white">
-              <span class="inline-flex items-center gap-1 bg-emerald-500 text-white font-black text-[9px] sm:text-[10px] tracking-wider px-2 py-0.5 rounded uppercase w-fit mb-1.5">
-                <i data-lucide="users-round" class="w-3 h-3"></i>
-                Kemitraan Faskes
-              </span>
-              <h2 class="text-sm sm:text-lg font-black leading-snug">
-                Integrasi Layanan &amp; Rujukan Paripurna
-              </h2>
-              <p class="text-[10px] sm:text-xs text-slate-200 mt-1 leading-relaxed">
-                Menghasilkan dampak lebih luas bagi derajat kesehatan masyarakat.
-              </p>
-            </div>
-          </div>
+         
 
         </div>
 
@@ -236,7 +204,7 @@
         <div id="slideDots" class="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/10">
           <button onclick="lompatSlide(0)" class="w-2 h-2 rounded-full transition-all bg-brand-yellow scale-125" aria-label="Lompat ke Slide 1"></button>
           <button onclick="lompatSlide(1)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 2"></button>
-          <button onclick="lompatSlide(2)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 3"></button>
+          <!-- <button onclick="lompatSlide(2)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 3"></button> -->
         </div>
 
       </div>
@@ -278,7 +246,7 @@
             <img 
               id="stripLogoDinkes"
               src="logo-dinkes.png" 
-              alt="Logo Dinkes Pati" 
+              alt="Safety" 
               class="max-h-full max-w-full w-auto object-contain"
               onerror="this.src='https://placehold.co/240x80/transparent/0F172A.png?text=Dinkes+Pati'"
             />
@@ -294,7 +262,7 @@
         <div class="relative z-10">
           <div class="p-3 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">
             <p class="text-xs text-blue-50 italic leading-relaxed text-center">
-              &ldquo;Integrasi strategis dalam penguatan jejaring dan kemitraan untuk menghasilkan dampak yang lebih besar dalam pelayanan kesehatan&rdquo;
+              &ldquo;Menguatkan Sinergi, Membangun Kolaborasi, Mewujudkan Perubahan yang Lebih Baik.&rdquo;
             </p>
           </div>
 
@@ -379,13 +347,13 @@
 
       <!-- Quick Action Grid ala Mobile App -->
       <div class="grid grid-cols-3 gap-2.5">
-        <button onclick="bukaModalForm()" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-brand-blue transition group">
+        <a id="btnQuickPresensi" href="https://sites.google.com/view/fastmu/rsvp-eks" target="_blank" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-brand-blue transition group">
           <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
             <i data-lucide="clipboard-pen-line" class="w-5 h-5"></i>
           </div>
           <span class="text-xs font-bold text-slate-800">Presensi</span>
-          <span class="text-[10px] text-slate-500 mt-0.5">Google Form</span>
-        </button>
+          <span class="text-[10px] text-slate-500 mt-0.5">RSVP Online</span>
+        </a>
 
         <a id="btnQuickMateri" href="#" target="_blank" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-emerald-500 transition group">
           <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
@@ -430,23 +398,16 @@
               <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Wajib</span>
             </div>
             <p class="text-xs text-slate-500 mt-1 mb-3 leading-relaxed">
-              Konfirmasi kehadiran Anda dalam forum SINERGI 2026 melalui Google Form resmi.
+              Konfirmasi kehadiran Anda dalam forum SINERGI 2026 melalui laman RSVP resmi RSU Fastabiq Sehat.
             </p>
-            <div class="flex gap-2">
-              <button 
-                onclick="bukaModalForm()" 
-                class="tap-effect flex-1 bg-brand-blue hover:bg-blue-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
-              >
-                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-                <span>Buka Form di Web</span>
-              </button>
+            <div>
               <a 
-                id="linkFormBaru" 
-                href="#" 
+                id="linkFormUtama" 
+                href="https://sites.google.com/view/fastmu/rsvp-eks" 
                 target="_blank" 
-                class="tap-effect bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 px-3 rounded-xl transition flex items-center justify-center gap-1"
+                class="tap-effect w-full bg-brand-blue hover:bg-blue-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
               >
-                <span>Tab Baru</span>
+                <span>Buka Formulir RSVP Presensi</span>
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               </a>
             </div>
@@ -579,7 +540,7 @@
           </p>
           <p class="flex items-start gap-2">
             <i data-lucide="building" class="w-4 h-4 text-brand-navy flex-shrink-0 mt-0.5"></i>
-            <span class="text-slate-600"><strong>Ruang:</strong> <span class="font-bold text-brand-blue">Synergy Space (Lantai Utama)</span></span>
+            <span class="text-slate-600"><strong>Ruang:</strong> <span class="font-bold text-brand-blue">Synergy Space</span></span>
           </p>
         </div>
 
@@ -601,7 +562,7 @@
         
         <div class="flex gap-2">
           <a 
-            href="https://wa.me/6281234567890?text=Halo%20Panitia%20SINERGI%202026%20RSU%20Fastabiq%20Sehat" 
+            href="https://wa.me/6281231907777?text=Halo%20Panitia%20SINERGI%202026%20RSU%20Fastabiq%20Sehat" 
             target="_blank" 
             class="tap-effect flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center flex items-center justify-center gap-1.5"
           >
@@ -667,49 +628,7 @@
     <span id="toastText">Tautan berhasil disalin!</span>
   </div>
 
-  <!-- ================= MODAL 1: GOOGLE FORM (EMBEDDED VIEW) ================= -->
-  <div id="modalForm" class="fixed inset-0 bg-slate-950/70 z-50 flex items-center justify-center p-2 sm:p-4 hidden backdrop-blur-sm">
-    <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl flex flex-col h-[92vh] overflow-hidden border border-slate-200">
-      
-      <!-- Modal Header -->
-      <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-        <div class="flex items-center gap-2.5">
-          <span class="w-3 h-3 rounded-full bg-brand-blue animate-ping"></span>
-          <div>
-            <h4 class="text-xs font-black text-slate-900 leading-tight">Formulir Registrasi &amp; Presensi</h4>
-            <p class="text-[10px] text-slate-500">SINERGI 2026 &bull; RSU Fastabiq Sehat</p>
-          </div>
-        </div>
-        <button onclick="tutupModalForm()" class="tap-effect text-slate-400 hover:text-slate-800 text-2xl font-bold w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 transition">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <!-- Iframe Container -->
-      <div class="flex-1 relative bg-slate-100">
-        <div id="loadingForm" class="absolute inset-0 flex flex-col items-center justify-center text-xs text-slate-500 bg-white">
-          <div class="w-8 h-8 border-3 border-brand-blue border-t-transparent rounded-full animate-spin mb-2"></div>
-          Memuat formulir Google Form...
-        </div>
-        <iframe 
-          id="iframeForm" 
-          src="" 
-          class="w-full h-full border-0 relative z-10"
-          onload="document.getElementById('loadingForm').style.display='none'"
-        ></iframe>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="px-4 py-2.5 border-t border-slate-200 bg-white flex justify-between items-center text-xs">
-        <span class="text-slate-500 text-[11px]">Terkendala pengisian?</span>
-        <a id="linkAlternatifForm" href="#" target="_blank" class="tap-effect text-brand-blue font-bold hover:underline flex items-center gap-1">
-          <span>Buka di Tab Layar Penuh</span>
-          <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
-      </div>
-
-    </div>
-  </div>
+  <!-- Modal Form dihilangkan karena Google Sites memblokir iframe (X-Frame-Options) -->
 
   <!-- ================= MODAL 2: QR CODE SHARE ================= -->
   <div id="modalQR" class="fixed inset-0 bg-slate-950/70 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
@@ -764,10 +683,9 @@
       logoStripParipurna: "logo-paripurna.png",
       logoStripDinkes: "logo-dinkes.png",
 
-      // Tautan Google Form Resmi
-      // Catatan: Untuk formEmbed, tambahkan '?embedded=true' di akhir link Google Form
-      formEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScC1L69W5P_m91qD_B-example/viewform?embedded=true",
-      formDirect: "https://bit.ly/Sinergi2026RSFS",
+      // Tautan Registrasi & Presensi Resmi (Google Sites FastMu RSVP)
+      formEmbed: "https://sites.google.com/view/fastmu/rsvp-eks",
+      formDirect: "https://sites.google.com/view/fastmu/rsvp-eks",
 
       // Tautan Folder Materi & Modul (Google Drive)
       materi: "https://drive.google.com/",
@@ -781,8 +699,8 @@
     };
 
     // State Hero Slideshow
-    let slideAktif = 0;
-    const totalSlides = 3;
+    let slideAktif = 0;a
+    const totalSlides = 2;
     let timerSlideshow = null;
 
     // Inisialisasi utama saat halaman dimuat
@@ -822,11 +740,11 @@
       }
 
       // Pasang Link Form, Materi, dan Dokumentasi
-      const linkFormBaru = document.getElementById("linkFormBaru");
-      if (linkFormBaru) linkFormBaru.href = CONFIG.formDirect;
+      const btnQuickPresensi = document.getElementById("btnQuickPresensi");
+      if (btnQuickPresensi) btnQuickPresensi.href = CONFIG.formDirect;
 
-      const linkAlternatifForm = document.getElementById("linkAlternatifForm");
-      if (linkAlternatifForm) linkAlternatifForm.href = CONFIG.formDirect;
+      const linkFormUtama = document.getElementById("linkFormUtama");
+      if (linkFormUtama) linkFormUtama.href = CONFIG.formDirect;
 
       const linkMateri = document.getElementById("linkMateri");
       if (linkMateri) linkMateri.href = CONFIG.materi;
@@ -841,133 +759,121 @@
       if (btnQuickDokumentasi) btnQuickDokumentasi.href = CONFIG.dokumentasi;
     }
 
-    // 2. Logika Hero Slideshow Adaptif
-    function inisialisasiSlideshow() {
-      tampilkanSlide(slideAktif);
-      mulaiAutoSlide();
+    // 2. Fungsi Navigasi Tab (Beranda, Akses & Form, Rundown, Lokasi)
+    function gantiTab(namaTab) {
+      const daftarTab = ['beranda', 'akses', 'rundown', 'lokasi'];
+      
+      daftarTab.forEach(tab => {
+        const konten = document.getElementById(`tab-${tab}`);
+        const btnTop = document.getElementById(`btnTab-${tab}`);
+        const btnBtm = document.getElementById(`btnBottom-${tab}`);
 
-      const container = document.getElementById("slideshowContainer");
-      if (container) {
-        container.addEventListener("mouseenter", hentikanAutoSlide);
-        container.addEventListener("mouseleave", mulaiAutoSlide);
-      }
-    }
+        if (tab === namaTab) {
+          if (konten) konten.classList.remove('hidden');
 
-    function mulaiAutoSlide() {
-      hentikanAutoSlide();
-      timerSlideshow = setInterval(() => {
-        geserSlide(1);
-      }, 4000);
-    }
-
-    function hentikanAutoSlide() {
-      if (timerSlideshow) clearInterval(timerSlideshow);
-    }
-
-    function geserSlide(arah) {
-      slideAktif = (slideAktif + arah + totalSlides) % totalSlides;
-      tampilkanSlide(slideAktif);
-    }
-
-    function lompatSlide(index) {
-      slideAktif = index;
-      tampilkanSlide(slideAktif);
-      mulaiAutoSlide();
-    }
-
-    function tampilkanSlide(idx) {
-      const slides = document.querySelectorAll("#slideshowContainer .slide-item");
-      const dots = document.querySelectorAll("#slideDots button");
-
-      slides.forEach((slide, i) => {
-        if (i === idx) {
-          slide.classList.remove("opacity-0", "pointer-events-none");
-          slide.classList.add("opacity-100", "z-10");
+          // Styling Tab Aktif (Top Pill Bar)
+          if (btnTop) {
+            btnTop.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all bg-white text-brand-navy shadow-sm flex items-center justify-center gap-1 font-bold text-[11px] sm:text-xs whitespace-nowrap";
+          }
+          // Styling Tab Aktif (Bottom Bar Mobile)
+          if (btnBtm) {
+            btnBtm.className = "tap-effect flex flex-col items-center gap-1 text-brand-blue font-bold";
+          }
         } else {
-          slide.classList.remove("opacity-100", "z-10");
-          slide.classList.add("opacity-0", "pointer-events-none");
+          if (konten) konten.classList.add('hidden');
+
+          // Styling Tab Non-aktif (Top Pill Bar)
+          if (btnTop) {
+            btnTop.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap";
+          }
+          // Styling Tab Non-aktif (Bottom Bar Mobile)
+          if (btnBtm) {
+            btnBtm.className = "tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium";
+          }
         }
       });
 
-      dots.forEach((dot, i) => {
-        if (i === idx) {
-          dot.className = "w-2.5 h-2.5 rounded-full transition-all bg-brand-yellow scale-125";
+      // Scroll ke bagian atas layar saat ganti tab
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 3. Controller Hero Slideshow
+    function perbaruiTampilanSlide() {
+      const slides = document.querySelectorAll(".slide-item");
+      const dotsContainer = document.getElementById("slideDots");
+      const dots = dotsContainer ? dotsContainer.querySelectorAll("button") : [];
+
+      slides.forEach((slide, index) => {
+        if (index === slideAktif) {
+          slide.classList.remove("opacity-0", "pointer-events-none");
+          slide.classList.add("opacity-100", "z-10");
+        } else {
+          slide.classList.add("opacity-0", "pointer-events-none");
+          slide.classList.remove("opacity-100", "z-10");
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        if (index === slideAktif) {
+          dot.className = "w-2 h-2 rounded-full transition-all bg-brand-yellow scale-125";
         } else {
           dot.className = "w-2 h-2 rounded-full transition-all bg-white/50";
         }
       });
     }
 
-    // Gesture Swipe Smartphone
+    function geserSlide(arah) {
+      slideAktif = (slideAktif + arah + totalSlides) % totalSlides;
+      perbaruiTampilanSlide();
+      resetTimerSlideshow();
+    }
+
+    function lompatSlide(index) {
+      slideAktif = index;
+      perbaruiTampilanSlide();
+      resetTimerSlideshow();
+    }
+
+    function inisialisasiSlideshow() {
+      perbaruiTampilanSlide();
+      resetTimerSlideshow();
+    }
+
+    function resetTimerSlideshow() {
+      if (timerSlideshow) clearInterval(timerSlideshow);
+      timerSlideshow = setInterval(() => {
+        slideAktif = (slideAktif + 1) % totalSlides;
+        perbaruiTampilanSlide();
+      }, 5000);
+    }
+
     function inisialisasiGestureSwipe() {
-      const slider = document.getElementById("slideshowContainer");
-      if (!slider) return;
+      const container = document.getElementById("slideshowContainer");
+      if (!container) return;
 
-      let touchStartX = 0;
-      let touchEndX = 0;
+      let startX = 0;
+      let endX = 0;
 
-      slider.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+      container.addEventListener("touchstart", (e) => {
+        startX = e.changedTouches[0].screenX;
       }, { passive: true });
 
-      slider.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
+      container.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].screenX;
+        const selisih = endX - startX;
+        if (Math.abs(selisih) > 40) {
+          if (selisih > 0) {
+            geserSlide(-1); // Swipe kanan -> slide sebelumnya
+          } else {
+            geserSlide(1);  // Swipe kiri -> slide berikutnya
+          }
+        }
       }, { passive: true });
-
-      function handleSwipe() {
-        const threshold = 40;
-        if (touchEndX < touchStartX - threshold) {
-          geserSlide(1);
-          mulaiAutoSlide();
-        } else if (touchEndX > touchStartX + threshold) {
-          geserSlide(-1);
-          mulaiAutoSlide();
-        }
-      }
     }
 
-    // 3. Tab Navigation
-    function gantiTab(tabId) {
-      const tabs = ['beranda', 'akses', 'rundown', 'lokasi'];
-      
-      tabs.forEach(tab => {
-        const el = document.getElementById(`tab-${tab}`);
-        const btnTab = document.getElementById(`btnTab-${tab}`);
-        const btnBottom = document.getElementById(`btnBottom-${tab}`);
-
-        if (tab === tabId) {
-          el.classList.remove('hidden');
-          btnTab.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all bg-white text-brand-navy shadow-sm flex items-center justify-center gap-1 font-bold text-[11px] sm:text-xs whitespace-nowrap";
-          if (btnBottom) {
-            btnBottom.className = "tap-effect flex flex-col items-center gap-1 text-brand-blue font-bold";
-          }
-        } else {
-          el.classList.add('hidden');
-          btnTab.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap";
-          if (btnBottom) {
-            btnBottom.className = "tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium";
-          }
-        }
-      });
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      lucide.createIcons();
-    }
-
-    // 4. Modal Google Form Controller
-    function bukaModalForm() {
-      const modal = document.getElementById("modalForm");
-      const iframe = document.getElementById("iframeForm");
-      
-      if (!iframe.src || iframe.src !== CONFIG.formEmbed) {
-        iframe.src = CONFIG.formEmbed;
-      }
-      modal.classList.remove("hidden");
-    }
-
-    function tutupModalForm() {
-      document.getElementById("modalForm").classList.add("hidden");
+    // 4. Buka Form Langsung (Pengganti Modal Iframe yang diblokir Google Sites)
+    function bukaFormPresensi() {
+      window.open(CONFIG.formDirect, '_blank');
     }
 
     // 5. Modal QR Code Controller
