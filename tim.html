@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tim Kepanitiaan SINERGI 2026 &bull; RSU Fastabiq Sehat PKU Muhammadiyah</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- QR Code Generator Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#002B66',
+              blue: '#0047BA',
+              accent: '#0D6EFD',
+              light: '#EEF4FF',
+              yellow: '#FFC800',
+              gold: '#F59E0B',
+              dark: '#081735'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .tap-effect {
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .tap-effect:active {
+      transform: scale(0.97);
+      filter: brightness(0.96);
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-yellow selection:text-brand-navy pb-16">
+
+  <!-- ================= HEADER UTAMA ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm">
+    <div class="max-w-2xl mx-auto px-4 h-16 flex items-center justify-between">
+      
+      <!-- Navigasi Balik / Identitas -->
+      <div class="flex items-center gap-3">
+        <a 
+          href="index.html" 
+          class="tap-effect w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center border border-slate-200 transition"
+          title="Kembali ke Portal Beranda"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        </a>
+        <div class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-brand-navy to-brand-blue text-white flex items-center justify-center font-black text-xs shadow-xs">
+            FS
+          </div>
+          <div>
+            <h1 class="text-xs sm:text-sm font-extrabold tracking-tight text-slate-900 leading-none">
+              PANITIA SINERGI 2026
+            </h1>
+            <p class="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-none mt-1">
+              RSU Fastabiq Sehat PKU Muhammadiyah
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge Paripurna -->
+      <span class="text-[10px] bg-amber-50 text-amber-900 border border-amber-300 font-bold px-2 py-1 rounded-lg flex items-center gap-1 shadow-2xs">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-600"></i>
+        <span class="hidden sm:inline">Official Team</span>
+      </span>
+
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA ================= -->
+  <main class="max-w-2xl mx-auto px-4 py-5 w-full flex-grow space-y-4">
+
+    <!-- Hero Card Profil Kepanitiaan -->
+    <div class="bg-gradient-to-br from-[#002255] via-[#003B99] to-[#0D63E6] rounded-3xl text-white p-5 shadow-lg border border-blue-400/20 relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-36 h-36 bg-brand-yellow/15 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-2">
+        <div class="inline-flex items-center gap-1.5 bg-brand-yellow text-brand-navy text-[10px] font-black px-2.5 py-0.5 rounded uppercase tracking-wider">
+          <i data-lucide="sparkles" class="w-3 h-3"></i>
+          Direktori &amp; Barcode ID
+        </div>
+        <h2 class="text-lg sm:text-xl font-black tracking-tight leading-snug">
+          Struktur Kepanitiaan SINERGI 2026
+        </h2>
+        <p class="text-xs text-blue-100 leading-relaxed max-w-lg">
+          Daftar resmi penanggung jawab, ketua, dan divisi pelaksana. Ketuk kartu atau barcode QR untuk menampilkan kartu ID lencana digital.
+        </p>
+
+        <!-- Ringkasan Statistik -->
+        <div class="pt-2 grid grid-cols-3 gap-2 text-center text-xs">
+          <div class="bg-black/25 backdrop-blur-sm p-2 rounded-xl border border-white/10">
+            <span id="statTotalAnggota" class="text-base font-black text-brand-yellow block leading-none">16</span>
+            <span class="text-[9px] text-blue-100 uppercase tracking-wider mt-1 block">Total Panitia</span>
+          </div>
+          <div class="bg-black/25 backdrop-blur-sm p-2 rounded-xl border border-white/10">
+            <span class="text-base font-black text-white block leading-none">5</span>
+            <span class="text-[9px] text-blue-100 uppercase tracking-wider mt-1 block">Divisi Kerja</span>
+          </div>
+          <div class="bg-black/25 backdrop-blur-sm p-2 rounded-xl border border-white/10">
+            <span class="text-base font-black text-emerald-300 block leading-none">100%</span>
+            <span class="text-[9px] text-blue-100 uppercase tracking-wider mt-1 block">Digital QR ID</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bar Pencarian & Filter Divisi -->
+    <div class="space-y-2.5">
+      <!-- Search Input -->
+      <div class="relative">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+        <input 
+          type="text" 
+          id="inputPencarian" 
+          oninput="tanganiPencarian(this.value)" 
+          placeholder="Cari nama panitia, divisi, atau ID (misal: Aditya, TIM-03)..." 
+          class="w-full pl-10 pr-10 py-3 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition shadow-2xs"
+        />
+        <button 
+          id="btnResetCari" 
+          onclick="resetPencarian()" 
+          class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 items-center justify-center text-xs"
+        >
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <!-- Filter Kategori Kancing (Pills) -->
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+        <button onclick="setFilterDivisi('semua')" id="btnFilter-semua" class="filter-btn tap-effect whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-bold transition bg-brand-navy text-white shadow-2xs">
+          Semua (16)
+        </button>
+        <button onclick="setFilterDivisi('pimpinan')" id="btnFilter-pimpinan" class="filter-btn tap-effect whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition bg-white text-slate-600 border border-slate-200 hover:text-slate-900">
+          Pimpinan
+        </button>
+        <button onclick="setFilterDivisi('inti')" id="btnFilter-inti" class="filter-btn tap-effect whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition bg-white text-slate-600 border border-slate-200 hover:text-slate-900">
+          Inti
+        </button>
+        <button onclick="setFilterDivisi('acara')" id="btnFilter-acara" class="filter-btn tap-effect whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition bg-white text-slate-600 border border-slate-200 hover:text-slate-900">
+          Seksi Acara
+        </button>
+        <button onclick="setFilterDivisi('konsumsi')" id="btnFilter-konsumsi" class="filter-btn tap-effect whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition bg-white text-slate-600 border border-slate-200 hover:text-slate-900">
+          Konsumsi &amp; Humas
+        </button>
+        <button onclick="setFilterDivisi('perlengkapan')" id="btnFilter-perlengkapan" class="filter-btn tap-effect whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-semibold transition bg-white text-slate-600 border border-slate-200 hover:text-slate-900">
+          Dokumentasi &amp; Alat
+        </button>
+      </div>
+    </div>
+
+    <!-- Kontainer Kartu Tim (Dirender via JS) -->
+    <div id="gridTimContainer" class="space-y-3">
+      <!-- Diisi otomatis oleh JavaScript -->
+    </div>
+
+    <!-- Placeholder Ketika Data Kosong -->
+    <div id="statusKosong" class="hidden bg-white rounded-3xl border border-slate-200 p-8 text-center space-y-2">
+      <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-400 mx-auto flex items-center justify-center">
+        <i data-lucide="user-x" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-sm font-bold text-slate-800">Nama Panitia Tidak Ditemukan</h3>
+      <p class="text-xs text-slate-500 max-w-xs mx-auto">
+        Coba gunakan kata kunci pencarian yang lain atau pilih kategori divisi "Semua".
+      </p>
+      <button onclick="resetPencarian()" class="tap-effect text-xs text-brand-blue font-bold hover:underline pt-2 inline-block">
+        Reset Pencarian
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="max-w-2xl mx-auto px-4 text-center text-xs text-slate-400 pt-6">
+    <p class="font-medium text-slate-600">RSU Fastabiq Sehat PKU Muhammadiyah &bull; Panitia SINERGI 2026</p>
+    <p class="text-[10px] text-slate-400 mt-0.5">Jl. Raya Pati - Tayu KM 3, Tambaharjo, Pati, Jawa Tengah</p>
+  </footer>
+
+  <!-- ================= MODAL LENCANA QR CODE ID PANITIA ================= -->
+  <div id="modalQRMember" class="fixed inset-0 bg-slate-950/75 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+    <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-5 text-center border border-slate-200 relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Header Modal -->
+      <div class="flex justify-between items-center mb-3">
+        <span class="text-[10px] font-black uppercase tracking-wider bg-blue-50 text-brand-blue px-2.5 py-1 rounded-full border border-blue-100 flex items-center gap-1">
+          <i data-lucide="badge-check" class="w-3.5 h-3.5 text-brand-blue"></i>
+          Digital ID Panitia
+        </span>
+        <button onclick="tutupModalQRMember()" class="tap-effect text-slate-400 hover:text-slate-800 p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Avatar & Info Anggota -->
+      <div class="flex flex-col items-center mb-3">
+        <div class="relative w-20 h-20 rounded-2xl p-1 bg-gradient-to-tr from-brand-navy to-brand-blue shadow-md mb-2 group cursor-zoom-in" onclick="previewFotoDariModal()" title="Klik untuk perbesar foto">
+          <img 
+            id="modalMemberFoto" 
+            src="" 
+            alt="Foto Panitia" 
+            class="w-full h-full object-cover rounded-xl bg-slate-100 transition-transform group-hover:scale-105"
+            onerror="this.src='https://placehold.co/180x180/002B66/FFFFFF.png?text=FOTO'"
+          />
+          <div class="absolute inset-1 rounded-xl bg-black/35 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity">
+            <i data-lucide="zoom-in" class="w-4 h-4"></i>
+          </div>
+          <span id="modalMemberIdTag" class="absolute -bottom-2 font-mono text-[9px] font-black px-2 py-0.5 rounded bg-brand-yellow text-slate-900 border border-white shadow-xs">
+            TIM-00
+          </span>
+        </div>
+        <h3 id="modalMemberNama" class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug mt-1.5">
+          Nama Anggota
+        </h3>
+        <p id="modalMemberJabatan" class="text-xs font-semibold text-brand-blue mt-0.5">
+          Jabatan / Divisi
+        </p>
+      </div>
+
+      <!-- Canvas QR Barcode Spesifik Anggota -->
+      <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 inline-block shadow-inner mb-3">
+        <div id="memberQrcodeCanvas" class="flex justify-center"></div>
+      </div>
+
+      <!-- URL Display -->
+      <div class="bg-slate-100 text-slate-700 p-2 rounded-xl text-[11px] font-mono break-all mb-4 text-center select-all border border-slate-200">
+        <span id="modalMemberUrlText">https://...</span>
+      </div>
+
+      <!-- Tombol Aksi -->
+      <div class="grid grid-cols-2 gap-2">
+        <button id="btnKunjungiLinkMember" onclick="bukaLinkMember()" class="tap-effect bg-brand-blue hover:bg-blue-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>Buka Link</span>
+        </button>
+        <button onclick="salinLinkMember()" class="tap-effect bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold py-2.5 px-3 rounded-xl transition flex items-center justify-center gap-1.5 border border-slate-200">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>Salin Link</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL FULLSCREEN LIGHTBOX PREVIEW FOTO ================= -->
+  <div id="modalLightboxFoto" class="fixed inset-0 bg-black/90 z-[60] flex flex-col items-center justify-between p-4 hidden backdrop-blur-md transition-all duration-300" onclick="tutupPreviewFotoLuar(event)">
+    
+    <!-- Top Action Bar Lightbox -->
+    <div class="w-full max-w-xl flex items-center justify-between z-10 text-white pt-2 px-2">
+      <div class="flex items-center gap-2">
+        <span id="lightboxIdBadge" class="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-brand-yellow text-slate-900">
+          TIM-00
+        </span>
+        <span class="text-xs text-slate-300 font-medium hidden sm:inline">Pratinjau Foto Panitia</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <!-- Tombol Layar Penuh Native -->
+        <button 
+          onclick="toggleLayarPenuh()" 
+          id="btnToggleFullscreen"
+          class="tap-effect w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition border border-white/15" 
+          title="Mode Layar Penuh (Fullscreen)"
+        >
+          <i data-lucide="maximize" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Tombol Tutup -->
+        <button 
+          onclick="tutupPreviewFoto()" 
+          class="tap-effect w-9 h-9 rounded-xl bg-white/10 hover:bg-rose-600 text-white flex items-center justify-center transition border border-white/15"
+          title="Tutup (Esc)"
+        >
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Center Photo Container -->
+    <div class="flex-1 flex items-center justify-center w-full max-w-lg p-2 sm:p-4 overflow-hidden" onclick="event.stopPropagation()">
+      <div class="relative max-h-[70vh] sm:max-h-[75vh] w-auto rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-slate-950 flex items-center justify-center animate-in zoom-in-95 duration-200">
+        <img 
+          id="lightboxFotoImg" 
+          src="" 
+          alt="Foto Fullscreen" 
+          class="max-h-[70vh] sm:max-h-[75vh] w-auto max-w-full object-contain select-none"
+        />
+      </div>
+    </div>
+
+    <!-- Bottom Caption Bar -->
+    <div class="w-full max-w-md bg-white/10 border border-white/15 backdrop-blur-md rounded-2xl p-3 text-center text-white mb-2 z-10" onclick="event.stopPropagation()">
+      <h3 id="lightboxNama" class="text-sm sm:text-base font-extrabold tracking-tight leading-snug">
+        Nama Anggota
+      </h3>
+      <p id="lightboxJabatan" class="text-xs text-brand-yellow font-medium mt-0.5">
+        Jabatan Panitia
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Toast Notifikasi Ringkas -->
+  <div id="toastMessage" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-2xl backdrop-blur-md hidden transition-all duration-300 flex items-center gap-2 border border-slate-700">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastText">Tautan berhasil disalin!</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /**
+     * KONFIGURASI TAUTAN ID & DIREKTORI FOTO
+     * Format link baru: https://humaspkrsrsfs.github.io/Sinergi2026/timid={ID}&pli=1&authuser=0
+     */
+    const TEAM_CONFIG = {
+      prefix: "https://humaspkrsrsfs.github.io/Sinergi2026/timid=",
+      suffix: "&pli=1&authuser=0",
+      getUrl: function(id) {
+        return `${this.prefix}${encodeURIComponent(id)}${this.suffix}`;
+      }
+    };
+
+    /**
+     * DATA LENGKAP STRUKTUR PANITIA DENGAN SLOT FOTO
+     * Anda dapat mengganti "foto" dengan nama file lokal Anda, misalnya "foto-fakhrul.jpg"
+     * Jika file tidak ada, sistem otomatis membuat placeholder elegan dengan inisial nama.
+     */
+    const PANITIA_DATA = [
+      // 1. Pimpinan & Pengarah
+      {
+        id: "TIM-01",
+        kategori: "pimpinan",
+        kategoriNama: "Pimpinan & Pengarah",
+        jabatan: "Pelindung",
+        nama: "Direktur Utama",
+        foto: "team-01.jpg",
+        badgeColor: "bg-amber-100 text-amber-900 border-amber-200",
+        inisial: "DU"
+      },
+      {
+        id: "TIM-02",
+        kategori: "pimpinan",
+        kategoriNama: "Pimpinan & Pengarah",
+        jabatan: "Penanggung Jawab",
+        nama: "Ketua Komite Mutu / Ketua Akreditasi",
+        foto: "team-02.jpg",
+        badgeColor: "bg-blue-100 text-brand-navy border-blue-200",
+        inisial: "KM"
+      },
+
+      // 2. Inti Kepanitiaan
+      {
+        id: "TIM-03",
+        kategori: "inti",
+        kategoriNama: "Inti Kepanitiaan",
+        jabatan: "Ketua Panitia",
+        nama: "dr. Muhammad Fakhrul Aditya Duta P",
+        foto: "team-03.png",
+        badgeColor: "bg-emerald-100 text-emerald-900 border-emerald-200",
+        inisial: "FA"
+      },
+      {
+        id: "TIM-04",
+        kategori: "inti",
+        kategoriNama: "Inti Kepanitiaan",
+        jabatan: "Sekretaris",
+        nama: "Christina Puspa Dewi, Amd. Kep",
+        foto: "team-04.jpg",
+        badgeColor: "bg-indigo-100 text-indigo-900 border-indigo-200",
+        inisial: "CP"
+      },
+      {
+        id: "TIM-05",
+        kategori: "inti",
+        kategoriNama: "Inti Kepanitiaan",
+        jabatan: "Bendahara",
+        nama: "Eka Jumi Astuti, S.Ak",
+        foto: "team-05.jpg",
+        badgeColor: "bg-rose-100 text-rose-900 border-rose-200",
+        inisial: "EJ"
+      },
+
+      // 3. Seksi Acara
+      {
+        id: "TIM-06",
+        kategori: "acara",
+        kategoriNama: "Seksi Acara",
+        jabatan: "Seksi Acara",
+        nama: "Anisah, S.H",
+        foto: "team-06.png",
+        badgeColor: "bg-purple-100 text-purple-900 border-purple-200",
+        inisial: "AN"
+      },
+      {
+        id: "TIM-07",
+        kategori: "acara",
+        kategoriNama: "Seksi Acara",
+        jabatan: "Seksi Acara",
+        nama: "Ary Mea Mega Yunmiati, S. ST",
+        foto: "team-07.jpg",
+        badgeColor: "bg-purple-100 text-purple-900 border-purple-200",
+        inisial: "AM"
+      },
+      {
+        id: "TIM-08",
+        kategori: "acara",
+        kategoriNama: "Seksi Acara",
+        jabatan: "Seksi Acara",
+        nama: "Mimin Faiqotul Muna, S. Kep., Ners",
+        foto: "team-08.jpg",
+        badgeColor: "bg-purple-100 text-purple-900 border-purple-200",
+        inisial: "MF"
+      },
+      {
+        id: "TIM-09",
+        kategori: "acara",
+        kategoriNama: "Seksi Acara",
+        jabatan: "Seksi Acara",
+        nama: "Yuliati, S. Kep., Ners",
+        foto: "team-09.jpg",
+        badgeColor: "bg-purple-100 text-purple-900 border-purple-200",
+        inisial: "YL"
+      },
+
+      // 4. Sie Konsumsi & Humas
+      {
+        id: "TIM-10",
+        kategori: "konsumsi",
+        kategoriNama: "Sie Konsumsi & Humas",
+        jabatan: "Sie Konsumsi",
+        nama: "Tika Ulinnuha Ramadhanti",
+        foto: "team-10.jpg",
+        badgeColor: "bg-orange-100 text-orange-900 border-orange-200",
+        inisial: "TU"
+      },
+      {
+        id: "TIM-11",
+        kategori: "konsumsi",
+        kategoriNama: "Sie Konsumsi & Humas",
+        jabatan: "Sie Konsumsi",
+        nama: "Sri Nurwati, SM",
+        foto: "team-11.jpg",
+        badgeColor: "bg-orange-100 text-orange-900 border-orange-200",
+        inisial: "SN"
+      },
+      {
+        id: "TIM-12",
+        kategori: "konsumsi",
+        kategoriNama: "Sie Konsumsi & Humas",
+        jabatan: "Humas & Kemitraan",
+        nama: "M, Gilang Lazuari, Amd",
+        foto: "team-12.jpg",
+        badgeColor: "bg-sky-100 text-sky-900 border-sky-200",
+        inisial: "GL"
+      },
+
+      // 5. Dokumentasi & Perlengkapan
+      {
+        id: "TIM-13",
+        kategori: "perlengkapan",
+        kategoriNama: "Dokumentasi & Perlengkapan",
+        jabatan: "Seksi Dokumentasi",
+        nama: "Rifal Budi Yuliano",
+        foto: "team-13.jpg",
+        badgeColor: "bg-teal-100 text-teal-900 border-teal-200",
+        inisial: "RB"
+      },
+      {
+        id: "TIM-14",
+        kategori: "perlengkapan",
+        kategoriNama: "Dokumentasi & Perlengkapan",
+        jabatan: "Seksi Perlengkapan",
+        nama: "Agus Riyanto, S.T",
+        foto: "team-14.jpg",
+        badgeColor: "bg-slate-200 text-slate-800 border-slate-300",
+        inisial: "AR"
+      },
+      {
+        id: "TIM-15",
+        kategori: "perlengkapan",
+        kategoriNama: "Dokumentasi & Perlengkapan",
+        jabatan: "Seksi Perlengkapan",
+        nama: "Rachman Joko Purnomo, S. Kep., Ners",
+        foto: "team-15.jpg",
+        badgeColor: "bg-slate-200 text-slate-800 border-slate-300",
+        inisial: "RJ"
+      },
+      {
+        id: "TIM-16",
+        kategori: "perlengkapan",
+        kategoriNama: "Dokumentasi & Perlengkapan",
+        jabatan: "Seksi Perlengkapan",
+        nama: "Setyono, S. Kep., Ners",
+        foto: "team-16.jpg",
+        badgeColor: "bg-slate-200 text-slate-800 border-slate-300",
+        inisial: "SY"
+      }
+    ];
+
+    // State Aplikasi
+    let kategoriAktif = "semua";
+    let kataKunciPencarian = "";
+    let tautanAnggotaAktif = "";
+    let dataAnggotaModalAktif = null;
+
+    // Inisialisasi saat DOM siap
+    document.addEventListener("DOMContentLoaded", () => {
+      renderTim();
+      lucide.createIcons();
+
+      // Listener tombol Escape keyboard untuk menutup lightbox / modal
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          tutupPreviewFoto();
+          tutupModalQRMember();
+        }
+      });
+    });
+
+    /**
+     * Render Daftar Panitia berdasarkan Kategori dan Kata Kunci
+     */
+    function renderTim() {
+      const container = document.getElementById("gridTimContainer");
+      const emptyState = document.getElementById("statusKosong");
+      if (!container) return;
+
+      // Filter Data
+      const hasilFilter = PANITIA_DATA.filter(item => {
+        const cocokKategori = (kategoriAktif === "semua") || (item.kategori === kategoriAktif);
+        const teksCari = kataKunciPencarian.toLowerCase().trim();
+        const cocokTeks = !teksCari || 
+          item.nama.toLowerCase().includes(teksCari) ||
+          item.jabatan.toLowerCase().includes(teksCari) ||
+          item.id.toLowerCase().includes(teksCari) ||
+          item.kategoriNama.toLowerCase().includes(teksCari);
+
+        return cocokKategori && cocokTeks;
+      });
+
+      // Tampilkan Empty State jika tidak ada yang cocok
+      if (hasilFilter.length === 0) {
+        container.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        return;
+      } else {
+        emptyState.classList.add("hidden");
+      }
+
+      // Kelompokkan data per Kategori Divisi
+      const kelompokKategori = {};
+      hasilFilter.forEach(item => {
+        if (!kelompokKategori[item.kategoriNama]) {
+          kelompokKategori[item.kategoriNama] = [];
+        }
+        kelompokKategori[item.kategoriNama].push(item);
+      });
+
+      let htmlOutput = "";
+
+      for (const [namaGrup, anggotaList] of Object.entries(kelompokKategori)) {
+        htmlOutput += `
+          <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xs p-4 sm:p-5">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+              <h3 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
+                <span>${namaGrup}</span>
+              </h3>
+              <span class="text-[11px] font-bold text-slate-400 bg-slate-50 px-2.5 py-0.5 rounded-full border border-slate-100">
+                ${anggotaList.length} Orang
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        `;
+
+        anggotaList.forEach(panitia => {
+          const fallbackPlaceholder = `https://placehold.co/180x180/002B66/FFFFFF.png?text=${encodeURIComponent(panitia.inisial)}`;
+          const linkQR = TEAM_CONFIG.getUrl(panitia.id);
+
+          htmlOutput += `
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-slate-50/80 hover:bg-slate-100/90 border border-slate-200/70 transition group">
+              
+              <!-- Foto Panitia: Klik untuk Buka Preview & Layar Penuh -->
+              <div 
+                onclick="bukaPreviewFoto('${panitia.foto}', '${panitia.nama.replace(/'/g, "\\'")}', '${panitia.jabatan}', '${panitia.id}', '${panitia.inisial}')"
+                class="relative w-14 h-14 rounded-2xl flex-shrink-0 overflow-hidden bg-slate-200 border border-slate-200 shadow-2xs cursor-zoom-in group/img"
+                title="Klik untuk perbesar foto"
+              >
+                <img 
+                  src="${panitia.foto}" 
+                  alt="${panitia.nama}" 
+                  class="w-full h-full object-cover transition-transform group-hover/img:scale-110 duration-300"
+                  onerror="this.src='${fallbackPlaceholder}'"
+                />
+                <!-- Overlay Ikon Zoom Hover -->
+                <div class="absolute inset-0 bg-black/35 opacity-0 group-hover/img:opacity-100 flex items-center justify-center text-white transition-opacity">
+                  <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                </div>
+                <span class="absolute bottom-0 right-0 font-mono text-[8px] bg-slate-900/90 text-white font-bold px-1 rounded-tl">
+                  ${panitia.id}
+                </span>
+              </div>
+
+              <!-- Identitas Teks -->
+              <div class="min-w-0 flex-1">
+                <span class="inline-block text-[9px] font-extrabold px-2 py-0.5 rounded-md border ${panitia.badgeColor}">
+                  ${panitia.jabatan}
+                </span>
+                <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug mt-1 truncate" title="${panitia.nama}">
+                  ${panitia.nama}
+                </h4>
+              </div>
+
+              <!-- Tombol Barcode QR ID -->
+              <button 
+                onclick="bukaModalQRMember('${panitia.id}', '${panitia.nama.replace(/'/g, "\\'")}', '${panitia.jabatan}', '${panitia.foto}', '${linkQR}')" 
+                class="tap-effect shrink-0 bg-white hover:bg-brand-navy hover:text-white text-slate-700 border border-slate-200 py-1.5 px-2.5 rounded-xl text-xs font-semibold transition flex items-center gap-1 shadow-2xs group/btn"
+                title="Lihat Barcode QR Digital ID"
+              >
+                <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
+                <span class="hidden sm:inline">QR ID</span>
+              </button>
+            </div>
+          `;
+        });
+
+        htmlOutput += `
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = htmlOutput;
+      lucide.createIcons();
+    }
+
+    /**
+     * Filter Divisi
+     */
+    function setFilterDivisi(kategori) {
+      kategoriAktif = kategori;
+
+      // Update styling tombol filter
+      const buttons = document.querySelectorAll(".filter-btn");
+      buttons.forEach(btn => {
+        btn.classList.remove("bg-brand-navy", "text-white", "font-bold", "shadow-2xs");
+        btn.classList.add("bg-white", "text-slate-600", "font-semibold", "border", "border-slate-200");
+      });
+
+      const btnAktif = document.getElementById(`btnFilter-${kategori}`);
+      if (btnAktif) {
+        btnAktif.classList.remove("bg-white", "text-slate-600", "font-semibold", "border", "border-slate-200");
+        btnAktif.classList.add("bg-brand-navy", "text-white", "font-bold", "shadow-2xs");
+      }
+
+      renderTim();
+    }
+
+    /**
+     * Interaksi Modal Barcode / QR ID Digital Panitia
+     */
+    function bukaModalQRMember(id, nama, jabatan, foto, url) {
+      tautanAnggotaAktif = url;
+      dataAnggotaModalAktif = { id, nama, jabatan, foto };
+
+      document.getElementById("modalMemberNama").innerText = nama;
+      document.getElementById("modalMemberJabatan").innerText = jabatan;
+      document.getElementById("modalMemberIdTag").innerText = id;
+      document.getElementById("modalMemberUrlText").innerText = url;
+
+      const imgElement = document.getElementById("modalMemberFoto");
+      imgElement.src = foto;
+      imgElement.onerror = () => {
+        imgElement.src = `https://placehold.co/180x180/002B66/FFFFFF.png?text=${encodeURIComponent(id)}`;
+      };
+
+      // Generate Barcode QR
+      const canvasContainer = document.getElementById("memberQrcodeCanvas");
+      canvasContainer.innerHTML = "";
+      new QRCode(canvasContainer, {
+        text: url,
+        width: 170,
+        height: 170,
+        colorDark: "#002B66",
+        colorLight: "#FFFFFF",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      document.getElementById("modalQRMember").classList.remove("hidden");
+      lucide.createIcons();
+    }
+
+    function tutupModalQRMember() {
+      document.getElementById("modalQRMember").classList.add("hidden");
+    }
+
+    function bukaLinkMember() {
+      if (tautanAnggotaAktif) {
+        window.open(tautanAnggotaAktif, '_blank');
+      }
+    }
+
+    function salinLinkMember() {
+      if (!tautanAnggotaAktif) return;
+      const input = document.createElement("input");
+      input.value = tautanAnggotaAktif;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      tampilkanToast(`Tautan ID panitia berhasil disalin!`);
+    }
+
+    /**
+     * Buka Pratinjau Foto Layar Penuh (Lightbox)
+     */
+    function bukaPreviewFoto(fotoSrc, nama, jabatan, id, inisial) {
+      const modal = document.getElementById("modalLightboxFoto");
+      const img = document.getElementById("lightboxFotoImg");
+      const namaEl = document.getElementById("lightboxNama");
+      const jabatanEl = document.getElementById("lightboxJabatan");
+      const idEl = document.getElementById("lightboxIdBadge");
+
+      namaEl.innerText = nama;
+      jabatanEl.innerText = jabatan;
+      idEl.innerText = id;
+
+      img.src = fotoSrc;
+      img.onerror = () => {
+        const teks = inisial || id;
+        img.src = `https://placehold.co/600x600/002B66/FFFFFF.png?text=${encodeURIComponent(teks)}`;
+      };
+
+      // Pastikan status zoom visual ter-reset ke default
+      isFotoZoomed = false;
+      img.classList.remove("max-h-[88vh]", "scale-105");
+      img.classList.add("max-h-[70vh]", "sm:max-h-[75vh]");
+
+      modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      lucide.createIcons();
+    }
+
+    function tutupPreviewFoto() {
+      const modal = document.getElementById("modalLightboxFoto");
+      const img = document.getElementById("lightboxFotoImg");
+      modal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+
+      // Reset status zoom
+      isFotoZoomed = false;
+      if (img) {
+        img.classList.remove("max-h-[88vh]", "scale-105");
+        img.classList.add("max-h-[70vh]", "sm:max-h-[75vh]");
+      }
+
+      // Keluar dari Fullscreen API jika sedang aktif secara aman
+      try {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          const exitPromise = document.exitFullscreen 
+            ? document.exitFullscreen() 
+            : (document.webkitExitFullscreen ? document.webkitExitFullscreen() : null);
+          if (exitPromise && typeof exitPromise.catch === "function") {
+            exitPromise.catch(() => {});
+          }
+        }
+      } catch (e) {
+        // Abaikan jika tidak diizinkan oleh policy
+      }
+    }
+
+    function tutupPreviewFotoLuar(e) {
+      // Menutup jika klik dilakukan di area background luar
+      if (e.target.id === "modalLightboxFoto") {
+        tutupPreviewFoto();
+      }
+    }
+
+    function previewFotoDariModal() {
+      if (dataAnggotaModalAktif) {
+        bukaPreviewFoto(
+          dataAnggotaModalAktif.foto,
+          dataAnggotaModalAktif.nama,
+          dataAnggotaModalAktif.jabatan,
+          dataAnggotaModalAktif.id
+        );
+      }
+    }
+
+    /**
+     * Toggle Mode Layar Penuh Aman (Safe Fullscreen & Visual Zoom Fallback)
+     */
+    let isFotoZoomed = false;
+
+    function toggleLayarPenuh() {
+      const lightbox = document.getElementById("modalLightboxFoto");
+      const img = document.getElementById("lightboxFotoImg");
+
+      // Cek apakah browser mengizinkan native fullscreen (Permissions Policy)
+      const isAllowed = document.fullscreenEnabled || document.webkitFullscreenEnabled;
+
+      if (isAllowed) {
+        try {
+          if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+            const reqPromise = lightbox.requestFullscreen 
+              ? lightbox.requestFullscreen() 
+              : (lightbox.webkitRequestFullscreen ? lightbox.webkitRequestFullscreen() : null);
+
+            if (reqPromise && typeof reqPromise.catch === "function") {
+              reqPromise.catch(() => {
+                // Jika ditolak Permissions Policy (misal di iframe), gunakan fallback visual zoom
+                toggleVisualZoom(img);
+              });
+            } else {
+              toggleVisualZoom(img);
+            }
+            return;
+          } else {
+            const exitPromise = document.exitFullscreen 
+              ? document.exitFullscreen() 
+              : (document.webkitExitFullscreen ? document.webkitExitFullscreen() : null);
+
+            if (exitPromise && typeof exitPromise.catch === "function") {
+              exitPromise.catch(() => {});
+            }
+            return;
+          }
+        } catch (err) {
+          // Tangani exception langsung jika pemanggilan diblokir sinkron
+          toggleVisualZoom(img);
+          return;
+        }
+      }
+
+      // Fallback visual zoom jika Fullscreen API tidak didukung atau tidak diizinkan
+      toggleVisualZoom(img);
+    }
+
+    /**
+     * Fallback memperbesar foto secara visual tanpa melanggar kebijakan iframe
+     */
+    function toggleVisualZoom(img) {
+      if (!img) return;
+      isFotoZoomed = !isFotoZoomed;
+      if (isFotoZoomed) {
+        img.classList.remove("max-h-[70vh]", "sm:max-h-[75vh]");
+        img.classList.add("max-h-[88vh]", "scale-105");
+        tampilkanToast("Tampilan foto diperbesar");
+      } else {
+        img.classList.remove("max-h-[88vh]", "scale-105");
+        img.classList.add("max-h-[70vh]", "sm:max-h-[75vh]");
+      }
+    }
+
+    /**
+     * Pencarian Real-time
+     */
+    function tanganiPencarian(nilai) {
+      kataKunciPencarian = nilai;
+      const btnReset = document.getElementById("btnResetCari");
+      if (nilai.trim().length > 0) {
+        btnReset.classList.remove("hidden");
+        btnReset.classList.add("flex");
+      } else {
+        btnReset.classList.add("hidden");
+        btnReset.classList.remove("flex");
+      }
+      renderTim();
+    }
+
+    function resetPencarian() {
+      const input = document.getElementById("inputPencarian");
+      if (input) input.value = "";
+      kataKunciPencarian = "";
+      document.getElementById("btnResetCari").classList.add("hidden");
+      document.getElementById("btnResetCari").classList.remove("flex");
+      renderTim();
+    }
+
+    /**
+     * Toast Notifikasi
+     */
+    function tampilkanToast(pesan) {
+      const toast = document.getElementById("toastMessage");
+      const toastText = document.getElementById("toastText");
+      toastText.innerText = pesan;
+      toast.classList.remove("hidden");
+
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
