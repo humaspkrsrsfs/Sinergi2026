@@ -72,7 +72,7 @@
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-sm">
     <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
       
-      <!-- Logo Brand PNG Transparan (Full, Tanpa Border/Outline) -->
+      <!-- Logo Brand PNG Transparan -->
       <div class="flex items-center gap-3">
         <div class="h-10 sm:h-11 flex items-center justify-center flex-shrink-0">
           <img 
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <!-- Action Button Header: QR Code Publik (Tanpa Ikon Pengaturan) -->
+      <!-- Action Button Header: QR Code Publik -->
       <div class="flex items-center gap-1.5 flex-shrink-0">
         <button 
           onclick="bukaModalQR()" 
@@ -130,7 +130,7 @@
       <!-- ================= HERO SLIDESHOW ADAPTIF ================= -->
       <div class="relative w-full overflow-hidden rounded-3xl bg-slate-900 shadow-xl border border-slate-200 group select-none">
         
-        <!-- Slide Container dengan min-height nyaman untuk teks di mobile -->
+        <!-- Slide Container -->
         <div id="slideshowContainer" class="relative w-full min-h-[220px] aspect-[4/3] sm:aspect-[16/9]">
           
           <!-- SLIDE 1: Gedung RS & Banner Resmi -->
@@ -141,7 +141,6 @@
               class="w-full h-full object-cover"
               onerror="this.src='https://placehold.co/1200x675/002B66/FFFFFF.png?text=SINERGI+2026+RSFS'"
             />
-            <!-- Gradient Overlay Modern dengan Safe Padding agar tidak menabrak panah kiri & kanan -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#001D47]/95 via-[#002B66]/70 to-transparent flex flex-col justify-end px-11 pb-7 sm:px-14 sm:pb-8 pt-4 text-white">
               <span class="inline-flex items-center gap-1 bg-brand-yellow text-brand-navy font-black text-[9px] sm:text-[10px] tracking-wider px-2 py-0.5 rounded uppercase w-fit mb-1.5">
                 <i data-lucide="sparkles" class="w-3 h-3"></i>
@@ -197,23 +196,21 @@
           <i data-lucide="chevron-right" class="w-4 h-4"></i>
         </button>
 
-        <!-- Indikator Bulat (Dots) Slideshow -->
+        <!-- Indikator Bulat Slideshow -->
         <div id="slideDots" class="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/10">
           <button onclick="lompatSlide(0)" class="w-2 h-2 rounded-full transition-all bg-brand-yellow scale-125" aria-label="Lompat ke Slide 1"></button>
           <button onclick="lompatSlide(1)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 2"></button>
-          <!-- <button onclick="lompatSlide(2)" class="w-2 h-2 rounded-full transition-all bg-white/50" aria-label="Lompat ke Slide 3"></button> -->
         </div>
 
       </div>
 
-      <!-- Partner Logo Strip Resmi: Murni Logo PNG Transparan (Full, Tanpa Border/Outline/Teks) -->
+      <!-- Partner Logo Strip Resmi -->
       <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/80 shadow-xs px-4 py-3.5">
         <div class="flex items-center justify-around gap-4 sm:gap-8">
           
-          <!-- Logo 1: RSU Fastabiq Sehat PKU Muhammadiyah -->
           <div class="flex items-center justify-center h-12 flex-1 max-w-[150px]">
             <img 
-              id="stripLogoRsfs"
+              id="stripLogoRsfs" 
               src="logo-rsfs.png" 
               alt="Logo RSU Fastabiq Sehat" 
               class="max-h-full max-w-full w-auto object-contain"
@@ -221,13 +218,11 @@
             />
           </div>
 
-          <!-- Divider Halus -->
           <div class="h-8 w-px bg-slate-200/80"></div>
 
-          <!-- Logo 2: Akreditasi Paripurna KARS Bintang Lima -->
           <div class="flex items-center justify-center h-12 flex-1 max-w-[150px]">
             <img 
-              id="stripLogoParipurna"
+              id="stripLogoParipurna" 
               src="logo-paripurna.png" 
               alt="Logo Akreditasi Paripurna" 
               class="max-h-full max-w-full w-auto object-contain"
@@ -235,13 +230,11 @@
             />
           </div>
 
-          <!-- Divider Halus -->
           <div class="h-8 w-px bg-slate-200/80"></div>
 
-          <!-- Logo 3: Dinas Kesehatan Kabupaten Pati -->
           <div class="flex items-center justify-center h-12 flex-1 max-w-[150px]">
             <img 
-              id="stripLogoDinkes"
+              id="stripLogoDinkes" 
               src="logo-dinkes.png" 
               alt="Logo Dinkes Pati" 
               class="max-h-full max-w-full w-auto object-contain"
@@ -263,7 +256,6 @@
             </p>
           </div>
 
-          <!-- Waktu, Tanggal & Jam -->
           <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
             <div class="flex items-center gap-2 bg-black/20 p-2.5 rounded-xl border border-white/10">
               <div class="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center text-brand-yellow shrink-0">
@@ -285,7 +277,6 @@
             </div>
           </div>
 
-          <!-- Venue & Shortlink Salin: Flex-wrap agar tidak bertabrakan di layar sempit -->
           <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2 bg-black/25 px-3 py-2 rounded-xl text-xs border border-white/10">
             <div class="flex items-center gap-1.5 shrink-0">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-yellow shrink-0"></i>
@@ -342,7 +333,7 @@
         </div>
       </div>
 
-      <!-- Quick Action Grid ala Mobile App -->
+      <!-- Quick Action Grid -->
       <div class="grid grid-cols-3 gap-2.5">
         <a id="btnQuickPresensi" href="https://sites.google.com/view/synergyspace/presensi" target="_blank" class="tap-effect bg-white p-3 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col items-center text-center hover:border-brand-blue transition group">
           <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center mb-1.5 group-hover:scale-110 transition-transform">
@@ -369,6 +360,42 @@
         </a>
       </div>
 
+      <!-- SECTION: GABUNG FORUM RUJUKAN FKTP KE RS -->
+      <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 rounded-3xl p-4 sm:p-5 text-white shadow-lg border border-emerald-400/30 relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+        <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5">
+          <div class="flex items-start gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center shrink-0 shadow-inner">
+              <i data-lucide="users-2" class="w-6 h-6 text-brand-yellow"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="bg-emerald-800/80 text-emerald-100 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full border border-emerald-400/30">
+                  Grup Komunikasi
+                </span>
+                <span class="text-[10px] text-emerald-200 font-semibold">&bull; FKTP &amp; RS</span>
+              </div>
+              <h3 class="text-sm sm:text-base font-black leading-snug">
+                Forum Rujukan FKTP ke RS Fastabiq Sehat
+              </h3>
+              <p class="text-[11px] sm:text-xs text-emerald-50 mt-1 leading-relaxed max-w-md">
+                Wadah koordinasi langsung dokter, faskes primer, dan rumah sakit guna mempercepat alur rujukan pasien serta update ketersediaan layanan.
+              </p>
+            </div>
+          </div>
+          <a 
+            id="btnGrupRujukanHome"
+            href="https://chat.whatsapp.com/IJOgNhuYVyF8lm7Qvcfq40?mode=gi_t"
+            target="_blank"
+            class="tap-effect w-full sm:w-auto bg-white text-emerald-800 hover:bg-emerald-50 font-bold text-xs py-2.5 px-4 rounded-xl shadow-md transition flex items-center justify-center gap-2 shrink-0"
+          >
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+            <span>Gabung Forum WhatsApp</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-700"></i>
+          </a>
+        </div>
+      </div>
+
     </section>
 
     <!-- TAB 2: AKSES FORM & MATERI LENGKAP -->
@@ -379,7 +406,7 @@
           <i data-lucide="info" class="w-4 h-4"></i>
         </div>
         <p class="text-xs text-brand-navy leading-relaxed font-medium">
-          Akses seluruh formulir presensi, registrasi delegasi, evaluasi kegiatan, serta unduhan materi paparan narasumber di bawah ini.
+          Akses seluruh formulir presensi, registrasi delegasi, forum rujukan, serta unduhan materi paparan narasumber di bawah ini.
         </p>
       </div>
 
@@ -405,6 +432,34 @@
             >
               <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
               <span>Buka Presensi Acara SINERGI</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD FORUM RUJUKAN FKTP KE RS (WHATSAPP GROUP) -->
+      <div class="bg-white rounded-2xl border-2 border-emerald-500/40 shadow-sm hover:shadow-md transition p-4 relative overflow-hidden">
+        <div class="flex items-start gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm sm:text-base font-bold text-slate-900">Forum Rujukan FKTP ke RS</h3>
+              <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Grup WhatsApp</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1 mb-3 leading-relaxed">
+              Forum komunikasi dan koordinasi jejaring rujukan fasilitas kesehatan tingkat pertama ke RSU Fastabiq Sehat PKU Muhammadiyah.
+            </p>
+            <a 
+              id="linkForumRujukanAkses" 
+              href="https://chat.whatsapp.com/IJOgNhuYVyF8lm7Qvcfq40?mode=gi_t" 
+              target="_blank" 
+              class="tap-effect w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="users-2" class="w-3.5 h-3.5"></i>
+              <span>Gabung Grup WhatsApp Forum Rujukan</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
             </a>
           </div>
@@ -522,7 +577,7 @@
 
     </section>
 
-    <!-- TAB 3: RUNDOWN ACARA -->
+    <!-- TAB 3: RUNDOWN ACARA (SESUAI SURAT UNDANGAN RESMI TERBARU) -->
     <section id="tab-rundown" class="hidden space-y-3">
       <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-4">
         <div class="flex items-center justify-between mb-1">
@@ -534,44 +589,131 @@
         <!-- Timeline items -->
         <div class="relative border-l-2 border-brand-blue/30 ml-3 space-y-5 text-xs">
           
+          <!-- 1. Kedatangan dan Registrasi Peserta -->
           <div class="relative pl-6">
             <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-blue border-2 border-white shadow"></span>
             <span class="inline-flex items-center gap-1 font-mono font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[11px] mb-1">
-              <i data-lucide="coffee" class="w-3 h-3"></i>
+              <i data-lucide="user-check" class="w-3 h-3"></i>
               07.30 - 08.00
             </span>
-            <h4 class="font-bold text-slate-900 text-sm">Registrasi Peserta &amp; Coffee Morning</h4>
-            <p class="text-slate-500 mt-0.5">Scan QR presensi digital, welcome snack &amp; sesi jejaring awal faskes.</p>
+            <h4 class="font-bold text-slate-900 text-sm">Kedatangan dan Registrasi Peserta</h4>
+            <p class="text-slate-500 mt-0.5">Pengisian presensi digital dan penyambutan seluruh delegasi faskes.</p>
           </div>
 
+          <!-- 2. Pembukaan oleh MC -->
           <div class="relative pl-6">
             <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-navy border-2 border-white shadow"></span>
             <span class="inline-flex items-center gap-1 font-mono font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded text-[11px] mb-1">
               <i data-lucide="mic-2" class="w-3 h-3"></i>
-              08.00 - 08.30
+              08.00 - 08.10
             </span>
-            <h4 class="font-bold text-slate-900 text-sm">Pembukaan &amp; Sambutan Pengantar</h4>
-            <p class="text-slate-500 mt-0.5">Direktur RSU Fastabiq Sehat PKU Muhammadiyah &amp; Kepala Dinkes Pati.</p>
+            <h4 class="font-bold text-slate-900 text-sm">Pembukaan oleh MC</h4>
+            <p class="text-slate-500 mt-0.5">Pengantar pembukaan acara resmi SINERGI 2026.</p>
           </div>
 
+          <!-- 3. Menyanyikan Lagu Kebangsaan Indonesia Raya -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-rose-500 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="music" class="w-3 h-3"></i>
+              08.10 - 08.15
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Menyanyikan Lagu Kebangsaan Indonesia Raya</h4>
+            <p class="text-slate-500 mt-0.5">Seluruh hadirin berdiri dan menyanyikan lagu Indonesia Raya bersama-sama.</p>
+          </div>
+
+          <!-- 4. Pembacaan Ayat Suci Al-Qur'an dan doa -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-emerald-600 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="book-open" class="w-3 h-3"></i>
+              08.15 - 08.20
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Pembacaan Ayat Suci Al-Qur'an dan Doa</h4>
+            <p class="text-slate-500 mt-0.5">Tilawah Al-Qur'an dan doa bersama untuk kelancaran kegiatan serta pelayanan faskes.</p>
+          </div>
+
+          <!-- 5. Sambutan oleh Pimpinan Daerah Muhammadiyah -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-sky-600 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="award" class="w-3 h-3"></i>
+              08.20 - 08.30
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Sambutan oleh Pimpinan Daerah Muhammadiyah</h4>
+            <p class="text-slate-500 mt-0.5">Sambutan dan arahan dari Pimpinan Daerah Muhammadiyah (PDM) Kabupaten Pati.</p>
+          </div>
+
+          <!-- 6. Keynote Speaker: Kepala Dinas Kesehatan Kabupaten Pati -->
           <div class="relative pl-6">
             <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-yellow border-2 border-white shadow"></span>
             <span class="inline-flex items-center gap-1 font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded text-[11px] mb-1">
               <i data-lucide="presentation" class="w-3 h-3"></i>
-              08.30 - 10.15
+              08.30 - 08.40
             </span>
-            <h4 class="font-bold text-slate-900 text-sm">Sesi Utama: Strategic Integration &amp; Networking</h4>
-            <p class="text-slate-500 mt-0.5">Integrasi sistem rujukan terpadu, kemitraan fasilitas kesehatan, dan diskusi panel.</p>
+            <span class="ml-1 text-[9px] font-bold bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded uppercase">Keynote Speaker</span>
+            <h4 class="font-bold text-slate-900 text-sm mt-0.5">Kepala Dinas Kesehatan Kabupaten Pati</h4>
+            <p class="text-brand-blue font-semibold mt-0.5 italic text-[11px]">
+              &ldquo;Pelayanan dalam Menyehatkan Masyarakat Pati dengan Layanan yang Prima&rdquo;
+            </p>
           </div>
 
+          <!-- 7. Paparan Pelayanan Rumah Sakit -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-brand-blue border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="building-2" class="w-3 h-3"></i>
+              08.40 - 09.25
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Paparan Pelayanan Rumah Sakit</h4>
+            <p class="text-slate-500 mt-0.5">Profil fasilitas unggulan, kesiapan layanan, dan integrasi rujukan RSU Fastabiq Sehat PKU Muhammadiyah.</p>
+          </div>
+
+          <!-- 8. Paparan materi oleh dr. Fetria Melani, Sp. GK., AIFO-K -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-purple-600 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="stethoscope" class="w-3 h-3"></i>
+              09.25 - 10.00
+            </span>
+            <span class="ml-1 text-[9px] font-bold bg-purple-100 text-purple-800 px-1.5 py-0.5 rounded uppercase">Materi Medis</span>
+            <h4 class="font-bold text-slate-900 text-sm mt-0.5">Paparan Materi oleh dr. Fetria Melani, Sp. GK., AIFO-K</h4>
+            <p class="text-purple-900 font-semibold mt-0.5 italic text-[11px]">
+              Materi: Alarm Stunting &amp; Wasting di 1000 Hari Pertama Kehidupan: Early Detection, Early Intervention
+            </p>
+          </div>
+
+          <!-- 9. Sharing Session (Diskusi & Tanya Jawab) -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-indigo-500 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="messages-square" class="w-3 h-3"></i>
+              10.00 - 10.45
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Sharing Session (Diskusi &amp; Tanya Jawab)</h4>
+            <p class="text-slate-500 mt-0.5">Sesi interaktif tanya jawab antara narasumber, manajemen RS, dan perwakilan faskes/FKTP perujuk.</p>
+          </div>
+
+          <!-- 10. Sesi Foto Bersama -->
+          <div class="relative pl-6">
+            <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-amber-500 border-2 border-white shadow"></span>
+            <span class="inline-flex items-center gap-1 font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded text-[11px] mb-1">
+              <i data-lucide="camera" class="w-3 h-3"></i>
+              10.45 - 10.50
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm">Sesi Foto Bersama</h4>
+            <p class="text-slate-500 mt-0.5">Dokumentasi resmi seluruh delegasi instansi faskes mitra SINERGI 2026.</p>
+          </div>
+
+          <!-- 11. Penutup -->
           <div class="relative pl-6">
             <span class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow"></span>
             <span class="inline-flex items-center gap-1 font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] mb-1">
-              <i data-lucide="handshake" class="w-3 h-3"></i>
-              10.15 - 11.00
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              10.50 - 11.00
             </span>
-            <h4 class="font-bold text-slate-900 text-sm">Penandatanganan Komitmen &amp; Penutup</h4>
-            <p class="text-slate-500 mt-0.5">Foto bersama faskes mitra, ramah tamah, serta penutupan acara resmi.</p>
+            <h4 class="font-bold text-slate-900 text-sm">Penutup</h4>
+            <p class="text-slate-500 mt-0.5">Penutupan resmi acara oleh MC dan ramah tamah.</p>
           </div>
 
         </div>
@@ -598,7 +740,7 @@
         <a 
           href="https://maps.google.com/?q=RSU+Fastabiq+Sehat+PKU+Muhammadiyah+Pati" 
           target="_blank" 
-          rel="noopener noreferrer"
+          rel="noopener noreferrer" 
           class="tap-effect w-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition text-center shadow-sm flex items-center justify-center gap-1.5"
         >
           <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
@@ -633,7 +775,7 @@
 
   </main>
 
-  <!-- ================= FLOATING BOTTOM NAVIGATION (MOBILE NATIVE APP FEEL) ================= -->
+  <!-- ================= FLOATING BOTTOM NAVIGATION ================= -->
   <nav class="fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-lg border-t border-slate-200 shadow-lg md:hidden">
     <div class="max-w-xl mx-auto px-4 py-2 flex items-center justify-around text-center">
       <button onclick="gantiTab('beranda')" id="btnBottom-beranda" class="tap-effect flex flex-col items-center gap-1 text-brand-blue font-bold">
@@ -646,7 +788,7 @@
         <span class="text-[10px]">Presensi</span>
       </button>
 
-      <!-- Center Floating Action Button (FAB) for QR Code -->
+      <!-- Center Floating Action Button (FAB) -->
       <button onclick="bukaModalQR()" class="tap-effect -mt-5 bg-gradient-to-tr from-brand-blue to-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30 border-2 border-white" aria-label="QR Code Scanner">
         <i data-lucide="qr-code" class="w-6 h-6"></i>
       </button>
@@ -679,9 +821,7 @@
     <span id="toastText">Tautan berhasil disalin!</span>
   </div>
 
-  <!-- Modal Form dihilangkan karena Google Sites memblokir iframe (X-Frame-Options) -->
-
-  <!-- ================= MODAL 2: QR CODE SHARE ================= -->
+  <!-- ================= MODAL: QR CODE SHARE ================= -->
   <div id="modalQR" class="fixed inset-0 bg-slate-950/70 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
     <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl p-5 text-center border border-slate-200">
       
@@ -720,15 +860,9 @@
     </div>
   </div>
 
-  <!-- ================= JAVASCRIPT LOGIC WEB APP ================= -->
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    /**
-     * ============================================================
-     * KONFIGURASI TAUTAN & FILE (UBAH MANUAL DI BAWAH INI)
-     * ============================================================
-     */
     const CONFIG = {
-      // Nama file logo PNG transparan (berada di folder yang sama dengan index.html)
       logoPng: "logo.png",
       logoStripRsfs: "logo-rsfs.png",
       logoStripParipurna: "logo-paripurna.png",
@@ -740,26 +874,27 @@
       // Tautan Konfirmasi Registrasi / RSVP FastMu
       rsvpRegistrasi: "https://sites.google.com/view/fastmu/rsvp-eks",
 
+      // Tautan Forum Grup WA Rujukan FKTP ke RS
+      linkGrupWaRujukan: "https://chat.whatsapp.com/IJOgNhuYVyF8lm7Qvcfq40?mode=gi_t",
+
       // Tautan Form Saran dan Masukan Peserta
       saranMasukan: "https://forms.gle/auLrmhsiVcrqYhG18",
 
       // Tautan Folder Materi & Modul (Google Drive)
       materi: "https://drive.google.com/drive/folders/1xaOYFUUGeyXVTqvPT-dneYGMw6RSiiHc",
 
-      // Tautan Galeri Foto & Dokumentasi (Google Photos / Google Drive)
+      // Tautan Galeri Foto & Dokumentasi
       dokumentasi: "https://photos.google.com/",
 
-      // Tampilan teks shortlink & target tanggal acara
+      // Display & Tanggal Acara
       shortlinkDisplay: "Bit.ly/Sinergi2026RSFS",
       eventTime: "2026-09-30T07:30:00+07:00"
     };
 
-    // State Hero Slideshow
     let slideAktif = 0;
     const totalSlides = 2;
     let timerSlideshow = null;
 
-    // Inisialisasi utama saat halaman dimuat
     document.addEventListener("DOMContentLoaded", () => {
       pasangTautanKeHalaman();
       inisialisasiCountdown();
@@ -767,50 +902,40 @@
       inisialisasiSlideshow();
       inisialisasiGestureSwipe();
       
-      // Render semua icon Lucide
       lucide.createIcons();
     });
 
-    // 1. Terapkan Konfigurasi Tautan dan File Gambar ke Elemen DOM
     function pasangTautanKeHalaman() {
-      // Pasang Logo PNG Header
       const mainLogo = document.getElementById("mainLogoImg");
-      if (mainLogo && CONFIG.logoPng) {
-        mainLogo.src = CONFIG.logoPng;
-      }
+      if (mainLogo && CONFIG.logoPng) mainLogo.src = CONFIG.logoPng;
 
-      // Pasang Logo PNG di Partner Strip
       const stripRsfs = document.getElementById("stripLogoRsfs");
-      if (stripRsfs && CONFIG.logoStripRsfs) {
-        stripRsfs.src = CONFIG.logoStripRsfs;
-      }
+      if (stripRsfs && CONFIG.logoStripRsfs) stripRsfs.src = CONFIG.logoStripRsfs;
 
       const stripParipurna = document.getElementById("stripLogoParipurna");
-      if (stripParipurna && CONFIG.logoStripParipurna) {
-        stripParipurna.src = CONFIG.logoStripParipurna;
-      }
+      if (stripParipurna && CONFIG.logoStripParipurna) stripParipurna.src = CONFIG.logoStripParipurna;
 
       const stripDinkes = document.getElementById("stripLogoDinkes");
-      if (stripDinkes && CONFIG.logoStripDinkes) {
-        stripDinkes.src = CONFIG.logoStripDinkes;
-      }
+      if (stripDinkes && CONFIG.logoStripDinkes) stripDinkes.src = CONFIG.logoStripDinkes;
 
-      // Pasang Link Presensi Acara SINERGI
       const linkPresensiAcara = document.getElementById("linkPresensiAcara");
       if (linkPresensiAcara) linkPresensiAcara.href = CONFIG.presensiAcara;
 
       const btnQuickPresensi = document.getElementById("btnQuickPresensi");
       if (btnQuickPresensi) btnQuickPresensi.href = CONFIG.presensiAcara;
 
-      // Pasang Link RSVP FastMu
+      const btnGrupRujukanHome = document.getElementById("btnGrupRujukanHome");
+      if (btnGrupRujukanHome) btnGrupRujukanHome.href = CONFIG.linkGrupWaRujukan;
+
+      const linkForumRujukanAkses = document.getElementById("linkForumRujukanAkses");
+      if (linkForumRujukanAkses) linkForumRujukanAkses.href = CONFIG.linkGrupWaRujukan;
+
       const linkRsvpEks = document.getElementById("linkRsvpEks");
       if (linkRsvpEks) linkRsvpEks.href = CONFIG.rsvpRegistrasi;
 
-      // Pasang Link Saran & Masukan
       const linkSaranMasukan = document.getElementById("linkSaranMasukan");
       if (linkSaranMasukan) linkSaranMasukan.href = CONFIG.saranMasukan;
 
-      // Pasang Link Materi dan Dokumentasi
       const linkMateri = document.getElementById("linkMateri");
       if (linkMateri) linkMateri.href = CONFIG.materi;
 
@@ -824,7 +949,6 @@
       if (btnQuickDokumentasi) btnQuickDokumentasi.href = CONFIG.dokumentasi;
     }
 
-    // 2. Fungsi Navigasi Tab (Beranda, Akses & Form, Rundown, Lokasi)
     function gantiTab(namaTab) {
       const daftarTab = ['beranda', 'akses', 'rundown', 'lokasi'];
       
@@ -836,33 +960,27 @@
         if (tab === namaTab) {
           if (konten) konten.classList.remove('hidden');
 
-          // Styling Tab Aktif (Top Pill Bar)
           if (btnTop) {
             btnTop.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all bg-white text-brand-navy shadow-sm flex items-center justify-center gap-1 font-bold text-[11px] sm:text-xs whitespace-nowrap";
           }
-          // Styling Tab Aktif (Bottom Bar Mobile)
           if (btnBtm) {
             btnBtm.className = "tap-effect flex flex-col items-center gap-1 text-brand-blue font-bold";
           }
         } else {
           if (konten) konten.classList.add('hidden');
 
-          // Styling Tab Non-aktif (Top Pill Bar)
           if (btnTop) {
             btnTop.className = "flex-1 min-w-[76px] py-1.5 px-2 rounded-lg text-center transition-all hover:text-slate-900 text-slate-600 flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold whitespace-nowrap";
           }
-          // Styling Tab Non-aktif (Bottom Bar Mobile)
           if (btnBtm) {
             btnBtm.className = "tap-effect flex flex-col items-center gap-1 text-slate-400 font-medium";
           }
         }
       });
 
-      // Scroll ke bagian atas layar saat ganti tab
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // 3. Controller Hero Slideshow
     function perbaruiTampilanSlide() {
       const slides = document.querySelectorAll(".slide-item");
       const dotsContainer = document.getElementById("slideDots");
@@ -928,20 +1046,14 @@
         const selisih = endX - startX;
         if (Math.abs(selisih) > 40) {
           if (selisih > 0) {
-            geserSlide(-1); // Swipe kanan -> slide sebelumnya
+            geserSlide(-1);
           } else {
-            geserSlide(1);  // Swipe kiri -> slide berikutnya
+            geserSlide(1);
           }
         }
       }, { passive: true });
     }
 
-    // 4. Buka Form Langsung (Pengganti Modal Iframe yang diblokir Google Sites)
-    function bukaFormPresensi() {
-      window.open(CONFIG.formDirect, '_blank');
-    }
-
-    // 5. Modal QR Code Controller
     function bukaModalQR() {
       document.getElementById("modalQR").classList.remove("hidden");
     }
@@ -964,7 +1076,6 @@
       });
     }
 
-    // 6. Hitung Mundur Real-time (Countdown)
     function inisialisasiCountdown() {
       const targetDate = new Date(CONFIG.eventTime).getTime();
 
@@ -995,7 +1106,6 @@
       setInterval(perbarui, 1000);
     }
 
-    // 7. Simpan Acara ke Google Calendar
     function tambahkanKeKalender() {
       const title = encodeURIComponent("SINERGI 2026 - RSU Fastabiq Sehat PKU Muhammadiyah");
       const details = encodeURIComponent("Strategic Integration and Networking for Greater Impact. Info: Bit.ly/Sinergi2026RSFS");
@@ -1005,7 +1115,6 @@
       window.open(gcalUrl, '_blank');
     }
 
-    // 8. Salin Shortlink
     function salinShortlink() {
       const textToCopy = CONFIG.shortlinkDisplay;
       const input = document.createElement("input");
@@ -1018,7 +1127,6 @@
       tampilkanToast(`Tautan ${textToCopy} berhasil disalin!`);
     }
 
-    // 9. Sistem Toast Notifikasi
     function tampilkanToast(pesan) {
       const toast = document.getElementById("toastMessage");
       const toastText = document.getElementById("toastText");
